@@ -10,24 +10,26 @@
 // import the Sass partials in the order that you need here
 
 // vendor
-@import 'normalize';
+@import "normalize";
 @include normalize();
 
 // Variables
-@import 'settings/variables';
+@import "settings/variables";
 
 // Mixins
-@import 'mixins/sugar';
+@import "mixins/*";
 
 // Global Styles
-@import 'globals/global';
-@import 'globals/wordpress';
-@import 'globals/typography';
+@import "globals/*";
 
 // Components
-@import 'components/social-menu';
-@import 'components/header';
-@import 'components/footer';
+@import "components/*";
+
+// Building Blocks
+@import "building_blocks/*";
+
+// Pages
+@import "pages/*";
 
 // Plugin Overrides
-@import 'plugins/overrides';
+@import "plugins/overrides";
