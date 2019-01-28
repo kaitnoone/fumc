@@ -9,13 +9,13 @@ var theme = "FUMC",
 var phpFiles = ["./**/*.php", "./*.php"],
   htmlFiles = ["./**/*.html", "./*.html"],
   cssFiles = ["./assets/css/*.css", "!./assets/css/*.min.css"],
-  sassFiles = ["./assets/scss/**/*.scss"],
+  sassFiles = ["./assets/src/scss/**/*.scss"],
   styleFiles = [cssFiles, sassFiles],
-  jsFiles = ["./assets/js/*.js"],
-  imageFiles = ["./assets/img/*.{jpg,png,gif}"],
+  jsFiles = ["./assets/src/js/*.js"],
+  imageFiles = ["./assets/src/images/**/*.{jpg,png,gif}"],
   concatFiles = [
     "./node_modules/bowser/bowser.js",
-    "./assets/js/*.js",
+    "./assets/src/js/*.js",
     "!./assets/js/font-awesome.config.js",
     "!./assets/js/theme.min.js",
     "!./assets/js/all.js"
@@ -126,18 +126,15 @@ gulp.task("minify-css", ["sass"], function() {
 });
 
 // Concatenate & Minify JavaScript
-gulp.task("scripts", ["lint"], function() {
-  return gulp
-    .src(concatFiles)
-    .pipe(sourcemaps.init())
-    .pipe(concat("all.js"))
-    .pipe(gulp.dest("./assets/js/"))
-    .pipe(rename("theme.min.js"))
-    .pipe(uglify())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest("./pattern-library/assets/js"))
-    .pipe(gulp.dest("./assets/js/"))
-    .pipe(reload({ stream: true }));
+gulp.task("scripts", function() {
+  return (
+    gulp
+      .src(jsFiles)
+      // .pipe(uglify())
+      .pipe(gulp.dest("./pattern-library/assets/js"))
+      .pipe(gulp.dest("./assets/js"))
+      .pipe(reload({ stream: true }))
+  );
 });
 
 // Compress Images

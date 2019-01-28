@@ -1,0 +1,125 @@
+.staff {
+  @include breakpoint(tablet-port) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  @include breakpoint(tablet-land) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.staff--member {
+  line-height: 1.5;
+  color: $color-grey-52;
+
+  &__headshot {
+    img {
+      display: block;
+    }
+  }
+
+  &__info {
+    background: $color-grey-f3;
+    padding: 15px 10px;
+  }
+
+  &__name {
+    @include heading-style-sub;
+    color: $color-brand-primary;
+    font-size: 0.75em;
+  }
+
+  &__title {
+    font-weight: 700;
+    line-height: 2;
+    font-size: 0.875em;
+  }
+
+  &__phones {
+    font-size: 0.825em;
+    display: flex;
+    flex-wrap: wrap;
+
+    .staff--member__phone {
+      display: flex;
+
+      &:before {
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: block;
+        margin-right: 5px;
+        height: 15px;
+        width: 15px;
+      }
+    }
+
+    .mobile {
+      margin-right: 5px;
+      &:before {
+        content: "";
+        background-image: url("../images/Cell.png");
+      }
+    }
+
+    .office {
+      &:before {
+        content: "";
+        background-image: url("../images/Phone.png");
+      }
+    }
+  }
+
+  &__email {
+    font-size: 0.8125em;
+    margin: 5px 0 0;
+    font-weight: 550;
+
+    a {
+      color: $color-grey-52;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__social {
+    font-size: 0.875em;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+
+    &-label {
+      margin-right: 5px;
+      font-weight: 550;
+    }
+
+    &-facebook {
+      background: url("../images/Facebook.png") no-repeat;
+      background-size: contain;
+      height: 15px;
+      width: 15px;
+      display: block;
+      text-indent: -999px;
+      margin-right: 5px;
+    }
+    &-twitter {
+      background: url("../images/Twitter.png") no-repeat;
+      background-size: contain;
+      height: 15px;
+      width: 15px;
+      display: block;
+      text-indent: -999px;
+    }
+  }
+
+  @include breakpoint(mobile-only) {
+    &__headshot {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

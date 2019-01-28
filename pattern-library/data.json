@@ -34,9 +34,9 @@
     "js": ["./assets/js/theme.min.js"]
   },
   "font_libraries": {
-    "typekit_code": null,
+    "typekit_code": "cle6jcf",
     "typography_web_fonts": null,
-    "google_web_fonts": null
+    "google_web_fonts": "https://fonts.googleapis.com/css?family=Fjalla+One|Lato|Nunito+Sans"
   },
   "content": {
     "show_first_page_on_load": true,
@@ -51,13 +51,78 @@
   },
   "groups": [
     {
-      "name": "components",
-      "title": "Components",
+      "name": "base",
+      "title": "Base",
       "components": [
         {
-          "group": "components",
+          "group": "base",
+          "name": "forms",
+          "title": "Forms"
+        }
+      ]
+    },
+    {
+      "name": "building-blocks",
+      "title": "Building Blocks",
+      "components": [
+        {
+          "group": "building-blocks",
           "name": "service_times",
           "title": "Service Times"
+        },
+        {
+          "group": "building-blocks",
+          "name": "cta_block",
+          "title": "CTA Block",
+          "max-width": "50%"
+        },
+        {
+          "group": "building-blocks",
+          "name": "cta_block_image",
+          "title": "CTA Block with Image",
+          "max-width": "50%"
+        },
+        {
+          "group": "building-blocks",
+          "name": "cta_block_image",
+          "title": "CTA Block with Image",
+          "max-width": "50%"
+        },
+        {
+          "group": "building-blocks",
+          "name": "ministries",
+          "title": "Ministries"
+        },
+        {
+          "group": "building-blocks",
+          "name": "staff",
+          "title": "Staff"
+        },
+        {
+          "group": "building-blocks",
+          "name": "resource_library",
+          "title": "Resource Library"
+        },
+        {
+          "group": "building-blocks",
+          "name": "resource_lib_cta",
+          "title": "Resource Library CTA"
+        }
+      ]
+    },
+    {
+      "name": "page-sections",
+      "title": "Page Sections",
+      "components": [
+        {
+          "group": "page-sections",
+          "name": "header",
+          "title": "Header"
+        },
+        {
+          "group": "page-sections",
+          "name": "footer",
+          "title": "Footer"
         }
       ]
     }

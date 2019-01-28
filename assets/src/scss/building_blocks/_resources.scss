@@ -1,0 +1,48 @@
+.resources--wrapper {
+  @include breakpoint(tablet-port) {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include breakpoint(tablet-land) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.resource--button {
+  @include button-outline($color-brand-highlight);
+  color: $color-brand-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:after {
+    content: "";
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 5px;
+    flex: 0 0 24px;
+  }
+
+  &.pdf {
+    &:after {
+      background-image: url("../images/PDF.png");
+    }
+  }
+  &.link {
+    &:after {
+      background-image: url("../images/Links.png");
+      height: 22px;
+      width: 22px;
+    }
+  }
+  &.form {
+    &:after {
+      background-image: url("../images/Forms.png");
+    }
+  }
+}

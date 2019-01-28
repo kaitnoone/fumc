@@ -1,38 +1,107 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
+<html <?php language_attributes();?>>
 
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="<?php the_title(); ?>" />
-  <meta property="og:site_name" content="<?php bloginfo('name') ?>">
+    <head>
 
-  <?php
-  /* Theme color for browsers that support it
-  <meta name="theme-color" content="#000">
-  */
-  ?>
+        <meta charset="<?php bloginfo('charset');?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="<?php the_title();?>" />
+        <meta property="og:site_name" content="<?php bloginfo('name')?>">
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Lato|Nunito+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/cle6jcf.css">
+        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/scripts.js">
+        </script>
 
-  <link rel="profile" href="http://gmpg.org/xfn/11">
-  <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-  <?php endif; ?>
 
-  <?php if (is_search()) { ?>
-   <meta name="robots" content="noindex, nofollow" />
-	<?php } ?>
+        <?php
+/* Theme color for browsers that support it
+<meta name="theme-color" content="#000">
+ */
+?>
 
-  <?php if ( is_singular() && comments_open() ) wp_enqueue_script( 'comment-reply' ); ?>
+        <link rel="profile" href="http://gmpg.org/xfn/11">
+        <?php if (is_singular() && pings_open(get_queried_object())): ?>
+        <link rel="pingback" href="<?php bloginfo('pingback_url');?>">
+        <?php endif;?>
 
-  <?php wp_head(); ?>
-</head>
+        <?php if (is_search()) {?>
+        <meta name="robots" content="noindex, nofollow" />
+        <?php }?>
 
-<body <?php body_class(); ?>>
+        <?php if (is_singular() && comments_open()) {
+    wp_enqueue_script('comment-reply');
+}
+?>
 
-  <?php // Header ?>
-  <header>
+        <?php wp_head();?>
+    </head>
 
-  </header>
+    <body <?php body_class();?>>
+        <?php // Header ?>
+        <?php
+$cover_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+?>
+        <header class="header" style="background-image: url('<?php echo $cover_image_url[0] ?>')">
+            <div class="eyebrow">
+                <div class="container">
+                    <a href="/new-here" class="button button--outline">I'm New Here</a>
+                </div>
+            </div>
+            <div class="main">
+                <div class="container">
+                    <div class="logo">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo1.png"
+                            alt="First Methodist Church" />
+                    </div>
+                    <div class="nav--toggle">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
 
-  <?php // Main Content ?>
-  <main>
+                    <nav class="primary">
+                        <?php wp_nav_menu(array('theme_location' => 'primary'));?>
+
+                        <!-- <ul class="
+                            primary-nav">
+                        <li class="primary-nav__item has-children">
+                            <a href="#">About</a>
+                            <ul class="child-nav">
+                                <li class="primary-nav__item--child-item">
+                                    <a href="#">Contact Us</a>
+                                </li>
+                                <li class="primary-nav__item--child-item">
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li class="primary-nav__item--child-item">
+                                    <a href="#">Leadership</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="primary-nav__item has-children">
+                            <a href="#">Connect</a>
+                            <ul class="child-nav">
+                                <li class="primary-nav__item--child-item">
+                                    <a href="#">Ministries</a>
+                                </li>
+                                <li class="primary-nav__item--child-item">
+                                    <a href="#">Events</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="primary-nav__item"><a href="#">Resource</a></li>
+                        <li class="primary-nav__item"><a href="#">Give</a></li>
+                        </ul> -->
+                    </nav>
+                </div>
+            </div>
+            <div class="hero">
+                <div class="hero--text">
+                    <h1 class="headline"><?php the_post_thumbnail_caption()?></h1>
+                    <div class="subhead"><?php echo get_post(get_post_thumbnail_id())->post_content ?></div>
+                </div>
+            </div>
+        </header>
+
+        <?php // Main Content ?>
+        <main>

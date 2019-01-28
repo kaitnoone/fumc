@@ -1,0 +1,64 @@
+.ministries {
+  @include breakpoint(tablet-port) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  @include breakpoint(tablet-land) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.ministries--block {
+  position: relative;
+
+  &__image {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: (22 / 25) * 100%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include heading-style-wide();
+    color: $color-white;
+    text-shadow: 0 3px 3px 3px rgba($color-black, 0.7);
+    font-size: 1.7em;
+    padding: 0 10%;
+  }
+
+  &__link {
+    background: $color-brand-secondary;
+    text-align: center;
+    padding: 5px 0;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    a {
+      color: $color-white;
+    }
+  }
+
+  @include breakpoint(mobile-only) {
+    + .ministries--block {
+      margin-top: 2em;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.cta_block {
+  border: 2px solid $color-grey-d8;
+  border-radius: 8px;
+  padding: 4.5em 4em;
+
+  &.texture {
+    background: url("../images/texture1.png") repeat;
+    background-size: 100%;
+  }
+
+  &--withimage {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &--image {
+    margin-right: 2em;
+    margin-bottom: 2em;
+    flex: 0 1 200px;
+  }
+
+  &--content-wrap {
+    flex: 0 2 350px;
+  }
+
+  &--title {
+    @include heading-style;
+    color: $color-brand-highlight;
+    font-size: 2em;
+  }
+  &--content {
+    margin: 1.5em 0;
+    p {
+      color: $color-text-light;
+      line-height: 1.5;
+    }
+  }
+
+  @include breakpoint(tablet-port) {
+    &--withimage {
+    }
+  }
+}

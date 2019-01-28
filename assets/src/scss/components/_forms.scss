@@ -1,0 +1,48 @@
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .title {
+    color: $color-brand-primary;
+    font-size: 2em;
+    flex: 0 0 100%;
+  }
+
+  .full {
+    flex: 0 0 100%;
+  }
+
+  input,
+  textarea {
+    border-radius: 8px;
+    border: 1px solid $color-grey-97;
+    padding: 1em 1.5em;
+    text-transform: uppercase;
+    color: $color-brand-highlight;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 1em;
+
+    &::placeholder {
+      text-transform: uppercase;
+      color: $color-brand-highlight;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+  }
+
+  input[type="submit"],
+  button[type="submit"] {
+    @include button-solid($color-brand-secondary);
+    border: 0;
+    padding: 1em 1.5em;
+    cursor: pointer;
+  }
+
+  @include breakpoint(tablet-port) {
+    .half {
+      flex: 0 0 49%;
+    }
+  }
+}

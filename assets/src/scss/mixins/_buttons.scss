@@ -1,0 +1,71 @@
+@mixin button-style() {
+  border-radius: 8px;
+  color: $color-white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  padding: 7px 25px;
+  display: inline-block;
+}
+
+@mixin button-solid($bg-color) {
+  @include button-style;
+  background-color: $bg-color;
+  transition: 0.1s ease-out all;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+@mixin button-outline($outline-color) {
+  @include button-style();
+  border: 2px solid $outline-color;
+  transition: 0.1s ease-out all;
+
+  &:hover {
+    background: rgba($color-black, 0.2);
+    transition: 0.1s ease-in all;
+  }
+}
+
+.button--solid {
+  @include button-solid($color-brand-secondary);
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+
+  &.hear {
+    &:after {
+      content: "";
+      background: url("../images/ear.png") no-repeat;
+      background-size: contain;
+      display: block;
+      height: 40px;
+      width: 40px;
+      margin-left: 10px;
+    }
+  }
+
+  &.wave {
+    &:after {
+      content: "";
+      background: url("../images/hand.png") no-repeat;
+      background-size: contain;
+      display: block;
+      height: 24px;
+      width: 24px;
+      margin-left: 10px;
+    }
+  }
+}
+
+.button--outline {
+  @include button-outline($color-white);
+}
+
+.button--outline__dark {
+  @include button-outline($color-blue);
+  color: $color-blue;
+}

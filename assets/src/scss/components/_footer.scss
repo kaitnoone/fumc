@@ -1,0 +1,223 @@
+/*------------------------------------------------------------------------------
+  Footer
+------------------------------------------------------------------------------*/
+
+.footer {
+  &-info {
+    background: $color-grey-d8;
+    padding: 10px;
+
+    &__logo {
+      text-align: center;
+      margin-bottom: 1em;
+
+      img {
+        max-width: 325px;
+      }
+    }
+
+    &__address {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $color-brand-primary;
+      padding: 0 15px;
+      line-height: 1.5;
+      letter-spacing: 2px;
+      margin-bottom: 1em;
+
+      p {
+        margin: 0;
+      }
+
+      a {
+        color: $color-brand-primary;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &__buttons {
+      p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .facebook {
+        background: url("../img/facebook.png") no-repeat;
+        background-size: contain;
+        display: block;
+        height: 45px;
+        width: 45px;
+        text-indent: -9999px;
+        margin-right: 1em;
+        flex: 0 0 45px;
+      }
+    }
+  }
+
+  &-menu {
+    padding: 2em 0;
+    background: url("../img/texture1.png") repeat;
+    background-size: 100%;
+
+    .footer-nav,
+    #menu-footer {
+      @include reset-list;
+
+      &__item,
+      .menu-item {
+        &.has-children,
+        &.menu-item-has-children {
+          position: relative;
+
+          // Style the down arrow
+          &:after {
+            display: block;
+            content: "";
+            height: 0;
+            width: 0;
+            border-top: 6px solid $color-brand-highlight;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            position: absolute;
+            right: 13px;
+            top: 22px;
+            margin-top: -4px;
+          }
+        }
+      }
+
+      .child-nav,
+      .sub-menu {
+        @include reset-list();
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.15s ease-out all;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        &.open {
+          max-height: 2000px;
+        }
+
+        .footer-nav__item--child-item {
+          border-top: 2px solid $color-white;
+        }
+
+        a {
+          color: $color-white;
+          font-weight: 700;
+          text-transform: uppercase;
+          display: block;
+          padding: 10px 30px;
+
+          &:hover,
+          &:active {
+            background: $color-brand-secondary;
+          }
+        }
+      }
+
+      a {
+        color: $color-brand-highlight;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: block;
+        padding: 10px 30px;
+
+        &:hover,
+        &:active {
+          background: $color-grey-d8;
+        }
+      }
+    }
+  }
+
+  &-copyright {
+    padding: 5px 0;
+    text-align: center;
+    background: $color-brand-primary;
+    color: $color-white;
+  }
+
+  @include breakpoint(tablet-port) {
+    &-info {
+      display: flex;
+      flex-wrap: wrap;
+
+      &__logo {
+        flex: 0 0 100%;
+      }
+
+      &__address {
+        flex: 0 0 45%;
+        padding: 0 15px;
+        margin-bottom: 0;
+
+        .textwidget {
+          padding-left: 20px;
+        }
+      }
+
+      &__buttons {
+        p {
+          flex: 0 0 45%;
+          justify-content: flex-end;
+        }
+      }
+    }
+    &-menu {
+      .menu-footer-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .footer-nav,
+      #menu-footer {
+        width: 70%;
+        display: flex;
+        align-content: center;
+        justify-content: space-around;
+
+        &__item,
+        .menu-item {
+          &.has-children,
+          &.menu-item-has-children {
+            a {
+              padding-left: 20px;
+              padding-right: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint(desktop) {
+    &-info {
+      align-items: center;
+
+      &__logo {
+        flex: 0 0 25%;
+        margin-bottom: 0;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      &__address {
+        flex: 0 0 35%;
+        padding: 0;
+      }
+
+      &__buttons {
+        flex: 0 0 40%;
+      }
+    }
+  }
+}

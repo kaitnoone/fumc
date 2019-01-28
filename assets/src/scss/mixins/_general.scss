@@ -1,0 +1,23 @@
+@mixin heading-style() {
+  font-family: $font-heading;
+  text-transform: uppercase;
+}
+
+@mixin heading-style-sub() {
+  font-family: $font-body;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+@mixin heading-style-wide($space: 5px) {
+  @include heading-style;
+  letter-spacing: $space;
+}
+
+@mixin reset-list() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
