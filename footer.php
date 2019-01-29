@@ -29,9 +29,7 @@
     </div>
     <div class="footer-copyright">
         <p>
-            Copyright © <script>
-            document.write(currentTime.getFullYear())
-            </script> | <strong>Crafted with Care</strong> <em>by</em>
+            Copyright © 2018 | <strong>Crafted with Care</strong> <em>by</em>
             <strong>Primitive Social</strong>
         </p>
     </div>

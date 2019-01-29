@@ -1,38 +1,43 @@
-(function() {
+document.addEventListener("DOMContentLoaded", function(event) {
   // SET UP THE MENU
   // get variables
-  console.log("heres the script");
   const CSS_OPEN_CLASS = "open";
-  let primaryNav = document.getQuerySelectorAll(
+  let primaryNavCon = document.querySelectorAll("nav.primary")[0];
+  let primaryNav = document.querySelectorAll(
     ".menu-header-container > .menu"
+  )[0];
+  let levelOneMIs = document.querySelectorAll(
+    ".menu-header-container > .menu > .menu-item-has-children"
   );
-  let levelOneMIs = primaryNav.getQuerySelectorAll("> .menu-item-has-children");
-  console.log(levelOneMIs);
-  let toggle = document.getQuerySelectorAll(".nav--toggle")[0];
+  let toggle = document.querySelectorAll(".nav--toggle")[0];
 
   // set up the mobile toggle
   toggle.addEventListener("click", function(evt) {
-    primaryNav.classList.toggle(CSS_OPEN_CLASS);
+    primaryNavCon.classList.toggle(CSS_OPEN_CLASS);
+    toggle.classList.toggle(CSS_OPEN_CLASS);
   });
 
-  for (let i = 0; i > levelOneMIs.length; i++) {
-    levelOneMIs[i].addEventListener("click", "a", function(evt) {
-      evt.preventDefault();
-      primaryNav.classList.toggle(CSS_OPEN_CLASS);
-    });
-  }
+  for (let i = 0; i < levelOneMIs.length; i++) {
+    // create toggle arrow element to append
+    let arrow = document.createElement("span");
+    arrow.classList.add("arrow");
 
-  // loop through top menu items and find ones with children
-  for (let x = 0; x > levelOneMIs.length; x++) {
-    // if there are children, set up click handlers
-    if (levelOneMIs[x].classList.contains("has-children")) {
-      let menuLink = levelOneMIs[x].getQuerySelectorAll("a");
-      menuLink.addEventListener("click", function(evt) {
-        evt.preventDefault();
-        levelOneMIs[x]
-          .getQuerySelectorAll("> .child-nav")
-          .classList.toggle(CSS_OPEN_CLASS);
-      });
-    }
+    // add toggle arrow
+    levelOneMIs[i].appendChild(arrow);
+    let childArrow = levelOneMIs[i].querySelector("span.arrow");
+
+    // set up click handler
+    childArrow.addEventListener("click", function(evt) {
+      if (levelOneMIs[i].classList.contains(CSS_OPEN_CLASS)) {
+        levelOneMIs.forEach(function(element) {
+          element.classList.remove(CSS_OPEN_CLASS);
+        });
+      } else {
+        levelOneMIs.forEach(function(element) {
+          element.classList.remove(CSS_OPEN_CLASS);
+        });
+        levelOneMIs[i].classList.add(CSS_OPEN_CLASS);
+      }
+    });
   }
 });

@@ -2,7 +2,7 @@
   padding: 40px;
   object-fit: contain;
   color: $color-white;
-  background-image: url("../img/texture.png"), $gradient-linear;
+  background-image: url("../img/texture2.png"), $gradient-linear;
 
   .resource_library_cta--title {
     @include heading-style();
