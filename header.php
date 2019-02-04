@@ -9,7 +9,11 @@
         <meta property="og:site_name" content="<?php bloginfo('name')?>">
         <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Lato|Nunito+Sans" rel="stylesheet">
         <link rel="stylesheet" href="https://use.typekit.net/cle6jcf.css">
-        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/scripts.js">
+        <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/flickity.min.css">
+        <script type="text/javascript"
+            src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/flickity.pkgd.min.js">
+        < script type = "text/javascript"
+        src = "<?php echo get_stylesheet_directory_uri(); ?>/assets/js/scripts.js" >
         </script>
 
 

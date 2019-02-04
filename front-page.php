@@ -39,6 +39,34 @@ get_header();
 
 <?php the_content();?>
 
+
+<?php endwhile;endif;?>
+
+<div class="ministries carousel">
+    <?php
+$args = [
+    'post_type' => 'ministry',
+    'posts_per_page' => 10,
+];
+$loop = new WP_Query($args);
+while ($loop->have_posts()) {
+    $loop->the_post();
+    ?>
+    <?php $large_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');?>
+    <?php $detail = get_field('show_full_detail_');?>
+    <a class="ministry<?php if (!$detail) {?> popup<?php }?>"
+        style="background-image: url(<?php echo $large_image_url[0] ?>)" href="<?php the_permalink();?>">
+        <?php the_title();?>
+        <div class="teaser">
+            <?php the_content()?>
+        </div>
+    </a>
+    <?php
+}?>
+</div>
+
+
+
 <div class="resource_library_cta">
     <div class="resource_library_cta--teaser">
         <div class="resource_library_cta--title">Resource Library</div>
@@ -52,6 +80,6 @@ get_header();
 </div>
 
 
-<?php endwhile;endif;
 
-get_footer();
+
+<?php get_footer();

@@ -40,4 +40,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     });
   }
+
+  // initialize ministires carousel
+  var elem = document.querySelector(".carousel");
+  var flkty = new Flickity(elem, {
+    // options
+    cellAlign: "left",
+    contain: true,
+    cellSelector: ".ministry"
+  });
 });
