@@ -14,4 +14,13 @@ h4,
 h5 {
   @include heading-style-wide(3px);
   font-weight: 400;
+  color: $color-blue;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 2em;
 }

@@ -661,6 +661,15 @@ h5 {
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	font-weight: 400;
+	color: #0873ba;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 2em;
 }
 
 /*------------------------------------------------------------------------------
@@ -1303,6 +1312,19 @@ nav.primary a {
 	font-size: 1.1875em;
 }
 
+.main-content {
+	background: #d8d8d8;
+	padding: 4em 1em;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
 /*----------------------------------------------------------------------------
   WordPress Social Menu
   - make sure to include FontAwesome for this to work!
@@ -1455,6 +1477,143 @@ nav.primary a {
 .cta_block--content p {
 	color: #525252;
 	line-height: 1.5;
+}
+
+.ministries-carousel-intro .title {
+	margin-bottom: 0;
+}
+
+.ministries-carousel-intro p {
+	margin: .5em 0;
+}
+
+.flickity-page-dots {
+	bottom: -10px;
+}
+
+.flickity-page-dots .dot {
+	background: transparent;
+	border: 1px solid #1ba7a6;
+	opacity: 1;
+}
+
+.flickity-page-dots .dot.is-selected {
+	background: #1ba7a6;
+}
+
+.ministries-carousel {
+	padding: 0 0 2em;
+	margin-bottom: 3em;
+}
+
+.ministries-carousel .flickity-slider {
+	padding: 3em 0;
+}
+
+.ministries-carousel .flickity-prev-next-button {
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border-radius: 0;
+}
+
+.ministries-carousel .flickity-prev-next-button.previous {
+	background-image: url("../img/left-arrow.png");
+}
+
+.ministries-carousel .flickity-prev-next-button.next {
+	background-image: url("../img/right-arrow.png");
+}
+
+.ministries-carousel .flickity-prev-next-button svg {
+	display: none;
+}
+
+.ministries-carousel .ministry {
+	width: 33%;
+	height: 360px;
+	-webkit-transition: .2s ease-in-out all;
+	-o-transition: .2s ease-in-out all;
+	transition: .2s ease-in-out all;
+}
+
+.ministries-carousel .ministry.is-selected {
+	-webkit-transform: scale(1.25, 1.25) translateY(10px);
+	-ms-transform: scale(1.25, 1.25) translateY(10px);
+	transform: scale(1.25, 1.25) translateY(10px);
+	z-index: 999;
+}
+
+.ministries-carousel .ministry.is-selected .ministry--link .overlay {
+	display: none;
+}
+
+.ministries-carousel .ministry.is-selected .ministry--link .ministry--title {
+	display: block;
+}
+
+.ministries-carousel .ministry--link {
+	display: block;
+	position: relative;
+	background-position: center center;
+	background-size: cover;
+}
+
+.ministries-carousel .ministry--link .overlay {
+	background: #ffcf00;
+	opacity: .85;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.ministries-carousel .ministry--link .ministry--title {
+	display: none;
+}
+
+.ministries-carousel .ministry--link:before {
+	display: block;
+	content: "";
+	width: 100%;
+	padding-top: 75.04132%;
+}
+
+.ministries-carousel .ministry--link .ministry--content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1em;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: end;
+	-webkit-align-items: flex-end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+	color: #ffffff;
+	font-family: proxima-nova, sans-serif;
+	text-transform: uppercase;
+	font-variant: small-caps;
+	letter-spacing: 3px;
+	font-weight: 700;
+	font-size: 1.4375em;
+	letter-spacing: 6px;
+	text-align: center;
+	z-index: 99;
+}
+
+.ministries-carousel .ministry--teaser {
+	display: none;
 }
 
 .ministries--block {
@@ -2064,6 +2223,15 @@ nav.primary #menu-header .menu-item-has-children .arrow {
 
 .header .logo {
 	max-width: 440px;
+}
+
+.main-content .inner {
+	width: 80%;
+}
+
+.ministries-carousel-intro {
+	width: 41%;
+	margin: 0 auto;
 }
 
 .ministries {

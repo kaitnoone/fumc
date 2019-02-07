@@ -37,12 +37,19 @@ get_header();
     </div>
 </div>
 
-<?php the_content();?>
-
+<div class="main-content">
+    <div class="inner">
+        <?php the_content();?>
+    </div>
+</div>
 
 <?php endwhile;endif;?>
 
-<div class="ministries carousel">
+<div class="ministries-carousel-intro">
+    <h3 class="title">Grow With Us</h3>
+    <p>Connect with others through ministries that awaken us to the grace of God.</p>
+</div>
+<div class="ministries-carousel">
     <?php
 $args = [
     'post_type' => 'ministry',
@@ -51,20 +58,23 @@ $args = [
 $loop = new WP_Query($args);
 while ($loop->have_posts()) {
     $loop->the_post();
-    ?>
-    <?php $large_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');?>
-    <?php $detail = get_field('show_full_detail_');?>
-    <a class="ministry<?php if (!$detail) {?> popup<?php }?>"
-        style="background-image: url(<?php echo $large_image_url[0] ?>)" href="<?php the_permalink();?>">
-        <?php the_title();?>
-        <div class="teaser">
-            <?php the_content()?>
-        </div>
-    </a>
-    <?php
-}?>
+    $large_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
+    $detail = get_field('show_full_detail_');?>
+    <div class="ministry">
+        <a class="ministry--link<?php if (!$detail) {?> popup<?php }?>"
+            style="background-image: url(<?php echo $large_image_url[0] ?>)" href="<?php the_permalink();?>">
+            <div class="overlay"></div>
+            <div class="ministry--content">
+                <div class="ministry--title"><?php the_title();?></div>
+            </div>
+            <div class="ministry--teaser">
+                <?php the_field('teaser');?>
+            </div>
+        </a>
+    </div>
+    <?php }?>
 </div>
-
+<?php if (have_posts()): while (have_posts()): the_post();?>
 
 
 <div class="resource_library_cta">
@@ -80,6 +90,26 @@ while ($loop->have_posts()) {
 </div>
 
 
+<?php $image = get_field('show_full_detail_');?>
+<div class="cta_block<?php if (!$image) {?> cta_block--withimage<?php }?>">
+    <?php if (!$image) {?>
+    <div class="cta_block--image">
+        <?php the_field('footer_cta_left-image');?>
+    </div>
+    <?php }?>
+    <div class="cta_block--content-wrap">
+        <div class="cta_block--title"><?php the_field('footer_cta_left-title');?></div>
+        <div class="cta_block--content">
+            <?php the_field('footer_cta_left-content');?>
+        </div>
+        <div class="cta_block--link">
+            <a class="button--solid <?php the_field('footer_cta_left-link_icon');?>"
+                href="<?php the_field('footer_cta_left-link');?>"><?php the_field('footer_cta_left-link_text');?></a>
+        </div>
+    </div>
+</div>
+
+<?php endwhile;endif;?>
 
 
 <?php get_footer();

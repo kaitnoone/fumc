@@ -138,27 +138,3 @@ function enable_more_buttons($buttons)
     return $buttons;
 }
 add_filter("mce_buttons_3", "enable_more_buttons");
-
-if (function_exists('acf_add_options_page')) {
-
-    // acf_add_options_page(array(
-    //     'page_title' => 'Theme General Settings',
-    //     'menu_title' => 'Theme Settings',
-    //     'menu_slug' => 'theme-general-settings',
-    //     'capability' => 'edit_posts',
-    //     'redirect' => false,
-    // ));
-
-    // acf_add_options_sub_page(array(
-    //     'page_title' => 'Footer CTA - Left',
-    //     'menu_title' => 'Footer CTA - Left',
-    //     'parent_slug' => 'theme-general-settings',
-    // ));
-
-    // acf_add_options_sub_page(array(
-    //     'page_title' => 'Footer CTA - Right',
-    //     'menu_title' => 'Footer CTA - Right',
-    //     'parent_slug' => 'theme-general-settings',
-    // ));
-
-}
