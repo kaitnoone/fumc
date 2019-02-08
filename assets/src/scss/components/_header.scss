@@ -150,37 +150,6 @@ nav.primary {
   }
 }
 
-.hero {
-  position: relative;
-  &:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: (43 / 144) * 100%;
-  }
-  > .hero--text {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $color-white;
-    flex-direction: column;
-
-    .headline {
-      font-size: 3.75em;
-      margin: 0 0 10px;
-    }
-
-    .subhead {
-      @include heading-style-sub;
-      font-size: 1.1875em;
-    }
-  }
-}
 
 // MOBILE ONLY STYLES
 @media (max-width: 799px) {
@@ -322,3 +291,4 @@ nav.primary {
     }
   }
 }
+

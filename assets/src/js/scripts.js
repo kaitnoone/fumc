@@ -48,8 +48,7 @@ jQuery(function ($) {
     wrapAround: true,
     cellAlign: 'center',
     contain: true,
-    cellSelector: '.ministry',
-    adaptiveHeight: true
+    cellSelector: '.ministry'
   });
 
   // setup ministry carousel click handler
