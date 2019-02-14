@@ -4,7 +4,7 @@
 <footer class="footer">
     <div class="footer-info">
         <div class="footer-info__logo">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo2.png"
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Logo2.png"
                 alt="First Methodist Church" />
         </div>
         <!-- WIDGET ONE -->

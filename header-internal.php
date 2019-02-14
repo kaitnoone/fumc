@@ -2,7 +2,7 @@
 <html <?php language_attributes();?>>
 
     <head>
-
+        <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
         <meta charset="<?php bloginfo('charset');?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:title" content="<?php the_title();?>" />
@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="https://use.typekit.net/cle6jcf.css">
         <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/jquery.fancybox.min.css" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/flickity.min.css">
-        <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery.fancybox.js"></script>
         <script type="text/javascript"
             src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/flickity.pkgd.min.js"></script>
@@ -67,37 +66,6 @@ $cover_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 
                     <nav class="primary">
                         <?php wp_nav_menu(array('theme_location' => 'primary'));?>
-
-                        <!-- <ul class="
-                            primary-nav">
-                        <li class="primary-nav__item has-children">
-                            <a href="#">About</a>
-                            <ul class="child-nav">
-                                <li class="primary-nav__item--child-item">
-                                    <a href="#">Contact Us</a>
-                                </li>
-                                <li class="primary-nav__item--child-item">
-                                    <a href="#">About Us</a>
-                                </li>
-                                <li class="primary-nav__item--child-item">
-                                    <a href="#">Leadership</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="primary-nav__item has-children">
-                            <a href="#">Connect</a>
-                            <ul class="child-nav">
-                                <li class="primary-nav__item--child-item">
-                                    <a href="#">Ministries</a>
-                                </li>
-                                <li class="primary-nav__item--child-item">
-                                    <a href="#">Events</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="primary-nav__item"><a href="#">Resource</a></li>
-                        <li class="primary-nav__item"><a href="#">Give</a></li>
-                        </ul> -->
                     </nav>
                 </div>
             </div>

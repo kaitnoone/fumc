@@ -549,7 +549,7 @@ template {
 }
 
 .button--outline:hover {
-	background: rgba(0, 0, 0, 0.2);
+	background: #dbb326;
 	-webkit-transition: 0.1s ease-in all;
 	-o-transition: 0.1s ease-in all;
 	transition: 0.1s ease-in all;
@@ -572,7 +572,7 @@ template {
 }
 
 .button--outline__dark:hover {
-	background: rgba(0, 0, 0, 0.2);
+	background: #dbb326;
 	-webkit-transition: 0.1s ease-in all;
 	-o-transition: 0.1s ease-in all;
 	transition: 0.1s ease-in all;
@@ -1661,17 +1661,21 @@ nav.primary a {
 	padding: 0 10%;
 }
 
+.ministries--block__teaser {
+	display: none;
+}
+
 .ministries--block__link {
+	display: block;
 	background: #dbb326;
 	text-align: center;
 	padding: 5px 0;
 	letter-spacing: 3px;
 	font-weight: 700;
 	text-transform: uppercase;
-}
-
-.ministries--block__link a {
 	color: #ffffff;
+	position: relative;
+	z-index: 999;
 }
 
 .resource_library_cta {
@@ -1717,7 +1721,7 @@ nav.primary a {
 }
 
 .resource_library_cta .resource_library_cta--button a:hover {
-	background: rgba(0, 0, 0, 0.2);
+	background: #dbb326;
 	-webkit-transition: 0.1s ease-in all;
 	-o-transition: 0.1s ease-in all;
 	transition: 0.1s ease-in all;
@@ -1752,7 +1756,7 @@ nav.primary a {
 }
 
 .resource--button:hover {
-	background: rgba(0, 0, 0, 0.2);
+	background: #dbb326;
 	-webkit-transition: 0.1s ease-in all;
 	-o-transition: 0.1s ease-in all;
 	transition: 0.1s ease-in all;

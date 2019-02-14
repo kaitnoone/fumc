@@ -43,17 +43,21 @@
     padding: 0 10%;
   }
 
+  &__teaser {
+    display: none;
+  }
+
   &__link {
+    display: block;
     background: $color-brand-secondary;
     text-align: center;
     padding: 5px 0;
     letter-spacing: 3px;
     font-weight: 700;
     text-transform: uppercase;
-
-    a {
-      color: $color-white;
-    }
+    color: $color-white;
+    position: relative;
+    z-index: 999;
   }
 
   @include breakpoint(mobile-only) {

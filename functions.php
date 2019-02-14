@@ -36,3 +36,5 @@ require get_template_directory() . '/inc/thumbnails.php';
  * Load shortcodes
  */
 require get_template_directory() . '/inc/shortcodes.php';
+
+// flush_rewrite_rules(false);
