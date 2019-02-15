@@ -1,0 +1,89 @@
+.ministry-media {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 70px;
+
+  .image {
+    width: 425px;
+    height: 425px;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($color-brand-primary, 0.8);
+    color: $color-white;
+    padding: 1.5em;
+    opacity: 0;
+    transition: 0.2s ease-out all;
+  }
+
+  .slide:hover {
+    .caption {
+      opacity: 1;
+      transition: 0.2s ease-in all;
+    }
+  }
+
+  .image--poster {
+    position: relative;
+
+    &:before {
+      content: "";
+      background: url(../img/play.svg);
+      background-size: cover;
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-25px, -25px);
+    }
+  }
+
+  .media__wrapper {
+    display: none;
+  }
+}
+
+.fancybox-content.media__wrapper {
+  .caption {
+    margin-top: 1em;
+  }
+  video,
+  iframe {
+    max-width: 100%;
+    background: $color-grey-f3;
+  }
+
+  .iframe {
+    width: 640px;
+    margin: 0 auto;
+    clear: both;
+    height: auto;
+    min-height: 315px;
+    position: relative;
+
+    .player {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @media (max-width: 979px) {
+    .iframe {
+      max-width: 100%;
+    }
+  }
+}

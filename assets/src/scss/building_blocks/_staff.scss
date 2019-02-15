@@ -2,7 +2,7 @@
   @include breakpoint(tablet-port) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 40px;
   }
 
   @include breakpoint(tablet-land) {
@@ -59,14 +59,14 @@
       margin-right: 5px;
       &:before {
         content: "";
-        background-image: url("../images/Cell.png");
+        background-image: url("../img/Cell.png");
       }
     }
 
     .office {
       &:before {
         content: "";
-        background-image: url("../images/Phone.png");
+        background-image: url("../img/Phone.png");
       }
     }
   }
@@ -97,7 +97,7 @@
     }
 
     &-facebook {
-      background: url("../images/Facebook.png") no-repeat;
+      background: url("../img/Facebook.png") no-repeat;
       background-size: contain;
       height: 15px;
       width: 15px;
@@ -106,7 +106,7 @@
       margin-right: 5px;
     }
     &-twitter {
-      background: url("../images/Twitter.png") no-repeat;
+      background: url("../img/Twitter.png") no-repeat;
       background-size: contain;
       height: 15px;
       width: 15px;

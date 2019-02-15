@@ -1,153 +1,150 @@
 .ministries-carousel-intro {
-    padding: 0 15px;
-    text-align: center;
+  padding: 0 15px;
+  text-align: center;
 
-    .title {
-        margin-bottom: 0;
-    }
-    p {
-        margin: .5em 0;
-    }
-    @include breakpoint(tablet-port) {
-        width: 41%;
-        margin: 0 auto;
-        text-align: left;
-        padding: 0;
-    }
+  .title {
+    margin-bottom: 0;
+  }
+  p {
+    margin: 0.5em 0;
+  }
+  @include breakpoint(tablet-port) {
+    width: 41%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0;
+  }
 }
 
-.flickity-page-dots {
-    bottom: -10px;
+// .flickity-page-dots {
+//     bottom: -10px;
 
-    .dot {
-        background: transparent;
-        border: 1px solid $color-teal;
-        opacity: 1;
+//     .dot {
+//         background: transparent;
+//         border: 1px solid $color-teal;
+//         opacity: 1;
 
-        &.is-selected {
-            background: $color-teal;
-        }
-    }
-}
+//         &.is-selected {
+//             background: $color-teal;
+//         }
+//     }
+// }
 
 .ministries-carousel {
-    padding: 0 0 2em;
-    margin-bottom: 3em;
+  padding: 0 0 2em;
+  margin-bottom: 3em;
 
-    .flickity-slider {
-        padding: 3em 0;
+  .flickity-slider {
+    padding: 3em 0;
+  }
+
+  .flickity-prev-next-button {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border-radius: 0;
+
+    &.previous {
+      background-image: url("../img/left-arrow.png");
+    }
+    &.next {
+      background-image: url("../img/right-arrow.png");
+    }
+    svg {
+      display: none;
+    }
+  }
+
+  .ministry {
+    width: 100%;
+    height: 360px;
+    transition: 0.2s ease-in-out all;
+
+    &.is-selected {
+      z-index: 999;
+
+      .ministry--link {
+        .overlay {
+          display: none;
+        }
+        .ministry--title {
+          display: block;
+          padding: 0 2em;
+        }
+      }
     }
 
-    .flickity-prev-next-button {
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-color: transparent;
-        border-radius: 0;
+    &--link {
+      display: block;
+      position: relative;
+      background-position: center center;
+      background-size: cover;
 
-        &.previous {
-            background-image: url('../img/left-arrow.png');
-        }
-        &.next {
-            background-image: url('../img/right-arrow.png');
+      .overlay {
+        background: $color-yellow;
+        opacity: 0.85;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
 
-        }
-        svg {
-            display: none;
-        }
-    }
+      .ministry--title {
+        display: none;
+      }
 
-    .ministry {
+      &:before {
+        display: block;
+        content: "";
         width: 100%;
-        height: 360px;
-        transition: .2s ease-in-out all;
-        
-        &.is-selected {
-            z-index: 999;
+        padding-top: (454 / 605) * 100%;
+      }
 
-            .ministry--link {
-                .overlay {
-                    display: none;
-                }
-                .ministry--title {
-                    display: block;
-                    padding: 0 2em;
-                }
-            }
-        }
-
-
-        &--link {
-            display: block;
-            position: relative;
-            background-position: center center;
-            background-size: cover;
-
-            .overlay {
-                background: $color-yellow;
-                opacity: .85;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0; 
-                bottom: 0;
-            }
-
-            .ministry--title {
-                display: none;
-            }
-
-            &:before {
-                display: block;
-                content: "";
-                width: 100%;
-                padding-top: (454 / 605) * 100%;
-            }
-
-            .ministry--content {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                padding: 1em;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: $color-white;
-                @include heading-style-sub;
-                font-size: 1.4375em;
-                letter-spacing: 6px;
-                text-align: center;
-                z-index: 99;
-            }
-        }
-
-        &--teaser {
-            display: none;
-        }
-
-
-        @include breakpoint(tablet-port) {
-            width: 40%;
-
-            &.is-selected {
-                transform: scale(1.25, 1.25) translateY(10px);
-            }
-        }
-
-        @include breakpoint(tablet-land) {
-            width: 33%;
-
-            &--link {
-                .ministry--content {
-                    align-items: flex-end;
-                }
-            }
-        }
-
-         @include breakpoint(desktop) {
-            width: 360px;
-         }
+      .ministry--content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-white;
+        @include heading-style-sub;
+        font-size: 1.4375em;
+        letter-spacing: 6px;
+        text-align: center;
+        z-index: 99;
+      }
     }
+
+    &--teaser {
+      display: none;
+    }
+
+    @include breakpoint(tablet-port) {
+      width: 40%;
+
+      &.is-selected {
+        transform: scale(1.25, 1.25) translateY(10px);
+      }
+    }
+
+    @include breakpoint(tablet-land) {
+      width: 33%;
+
+      &--link {
+        .ministry--content {
+          align-items: flex-end;
+        }
+      }
+    }
+
+    @include breakpoint(desktop) {
+      width: 360px;
+    }
+  }
 }

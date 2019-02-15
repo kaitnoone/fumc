@@ -41,7 +41,7 @@ jQuery(function($) {
     });
   }
 
-  // initialize ministires carousel
+  // initialize ministries carousel
   var ministryCarousel = document.querySelectorAll(".ministries-carousel")[0];
   if (ministryCarousel) {
     var flkty = new Flickity(ministryCarousel, {
@@ -86,6 +86,30 @@ jQuery(function($) {
           $.fancybox.open(teaser);
         }
       });
+    }
+  }
+
+  // setup ministry page media carousel
+  let ministryMedia = document.querySelectorAll(".ministry-media")[0];
+  if (ministryMedia) {
+    var flkty = new Flickity(ministryMedia, {
+      // options
+      wrapAround: true,
+      cellSelector: ".slide",
+      freeScroll: false,
+      lazyLoad: false
+    });
+
+    let ministrySlides = ministryMedia.querySelectorAll(".slide");
+    if (ministrySlides.length) {
+      for (let z = 0; z < ministrySlides.length; z++) {
+        let media = ministrySlides[z].querySelectorAll(".media__wrapper")[0];
+        ministrySlides[z].addEventListener("click", function(evt) {
+          evt.preventDefault();
+          // do the fancybox stuff to get the teaser
+          $.fancybox.open(media);
+        });
+      }
     }
   }
 });

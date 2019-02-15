@@ -1325,6 +1325,17 @@ nav.primary a {
 	align-items: flex-end;
 }
 
+.hero.post > .hero--text {
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
 .main-content {
 	background: rgba(144, 144, 139, 0.1);
 	padding: 4em 1em;
@@ -1336,6 +1347,10 @@ nav.primary a {
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
 	justify-content: center;
+}
+
+.main-content--plain {
+	background: transparent;
 }
 
 /*----------------------------------------------------------------------------
@@ -1475,6 +1490,94 @@ nav.primary a {
 	line-height: 1.5;
 }
 
+.ministry-media {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	margin-bottom: 70px;
+}
+
+.ministry-media .image {
+	width: 425px;
+	height: 425px;
+}
+
+.ministry-media .caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(8, 115, 186, 0.8);
+	color: #ffffff;
+	padding: 1.5em;
+	opacity: 0;
+	-webkit-transition: 0.2s ease-out all;
+	-o-transition: 0.2s ease-out all;
+	transition: 0.2s ease-out all;
+}
+
+.ministry-media .slide:hover .caption {
+	opacity: 1;
+	-webkit-transition: 0.2s ease-in all;
+	-o-transition: 0.2s ease-in all;
+	transition: 0.2s ease-in all;
+}
+
+.ministry-media .image--poster {
+	position: relative;
+}
+
+.ministry-media .image--poster:before {
+	content: "";
+	background: url(../img/play.svg);
+	background-size: cover;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-25px, -25px);
+	-ms-transform: translate(-25px, -25px);
+	transform: translate(-25px, -25px);
+}
+
+.ministry-media .media__wrapper {
+	display: none;
+}
+
+.fancybox-content.media__wrapper .caption {
+	margin-top: 1em;
+}
+
+.fancybox-content.media__wrapper video,
+.fancybox-content.media__wrapper iframe {
+	max-width: 100%;
+	background: #f3f3f3;
+}
+
+.fancybox-content.media__wrapper .iframe {
+	width: 640px;
+	margin: 0 auto;
+	clear: both;
+	height: auto;
+	min-height: 315px;
+	position: relative;
+}
+
+.fancybox-content.media__wrapper .iframe .player {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+}
+
+.fancybox-content.media__wrapper .iframe iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
 .ministries-carousel-intro {
 	padding: 0 15px;
 	text-align: center;
@@ -1485,21 +1588,7 @@ nav.primary a {
 }
 
 .ministries-carousel-intro p {
-	margin: .5em 0;
-}
-
-.flickity-page-dots {
-	bottom: -10px;
-}
-
-.flickity-page-dots .dot {
-	background: transparent;
-	border: 1px solid #1ba7a6;
-	opacity: 1;
-}
-
-.flickity-page-dots .dot.is-selected {
-	background: #1ba7a6;
+	margin: 0.5em 0;
 }
 
 .ministries-carousel {
@@ -1534,9 +1623,9 @@ nav.primary a {
 .ministries-carousel .ministry {
 	width: 100%;
 	height: 360px;
-	-webkit-transition: .2s ease-in-out all;
-	-o-transition: .2s ease-in-out all;
-	transition: .2s ease-in-out all;
+	-webkit-transition: 0.2s ease-in-out all;
+	-o-transition: 0.2s ease-in-out all;
+	transition: 0.2s ease-in-out all;
 }
 
 .ministries-carousel .ministry.is-selected {
@@ -1561,7 +1650,7 @@ nav.primary a {
 
 .ministries-carousel .ministry--link .overlay {
 	background: #ffcf00;
-	opacity: .85;
+	opacity: 0.85;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1947,12 +2036,12 @@ nav.primary a {
 
 .staff--member__phones .mobile:before {
 	content: "";
-	background-image: url("../images/Cell.png");
+	background-image: url("../img/Cell.png");
 }
 
 .staff--member__phones .office:before {
 	content: "";
-	background-image: url("../images/Phone.png");
+	background-image: url("../img/Phone.png");
 }
 
 .staff--member__email {
@@ -1988,7 +2077,7 @@ nav.primary a {
 }
 
 .staff--member__social-facebook {
-	background: url("../images/Facebook.png") no-repeat;
+	background: url("../img/Facebook.png") no-repeat;
 	background-size: contain;
 	height: 15px;
 	width: 15px;
@@ -1998,7 +2087,7 @@ nav.primary a {
 }
 
 .staff--member__social-twitter {
-	background: url("../images/Twitter.png") no-repeat;
+	background: url("../img/Twitter.png") no-repeat;
 	background-size: contain;
 	height: 15px;
 	width: 15px;
@@ -2184,7 +2273,7 @@ form .half {
 .staff {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-gap: 20px;
+	grid-gap: 40px;
 }
 
 }
@@ -2281,6 +2370,10 @@ nav.primary #menu-header .menu-item-has-children .arrow {
 
 .main-content .inner {
 	width: 80%;
+}
+
+.main-content .inner--wide {
+	width: 90%;
 }
 
 .cta--wrapper {
@@ -2389,6 +2482,14 @@ nav.primary #menu-header .menu-item-has-children .arrow {
 	-webkit-flex-grow: 2;
 	-ms-flex-positive: 2;
 	flex-grow: 2;
+}
+
+}
+
+@media (max-width: 979px) {
+
+.fancybox-content.media__wrapper .iframe {
+	max-width: 100%;
 }
 
 }

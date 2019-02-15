@@ -1,18 +1,22 @@
 <?php
 
 /*-----------------------------------------------------------------------------
-  Get featured image as url
+Get featured image as url
 -----------------------------------------------------------------------------*/
-function featuredURL($size = 'full'){
-  $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $size );
-  $url = $thumb['0'];
-  echo $url;
+function featuredURL($size = 'full')
+{
+    $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $size);
+    $url = $thumb['0'];
+    echo $url;
 }
 
 /*-----------------------------------------------------------------------------
-  Adds thumbnail support and additional thumbnail sizes
+Adds thumbnail support and additional thumbnail sizes
 -----------------------------------------------------------------------------*/
 
-if( function_exists('prelude_features') ){
-  // Use add_image_size below to add additional thumbnail sizes
+if (function_exists('prelude_features')) {
+    // Use add_image_size below to add additional thumbnail sizes
+    add_image_size('media-carousel-thumb', 425, 425, true); //(cropped)
+    add_image_size('media-carousel-full', 800, 425, false); //(cropped)
+    add_image_size('staff-headshot', 245, 245, true); //(cropped)
 }

@@ -1,12 +1,20 @@
 .main-content {
-    background: rgba($color-grey-90, .1);
-    padding: 4em 1em;
-    display: flex;
-    justify-content: center;
+  background: rgba($color-grey-90, 0.1);
+  padding: 4em 1em;
+  display: flex;
+  justify-content: center;
 
-    @include breakpoint(tablet-land) {
-        .inner {
-            width: 80%;
-        }
+  &--plain {
+    background: transparent;
+  }
+
+  @include breakpoint(tablet-land) {
+    .inner {
+      width: 80%;
     }
+
+    .inner--wide {
+      width: 90%;
+    }
+  }
 }

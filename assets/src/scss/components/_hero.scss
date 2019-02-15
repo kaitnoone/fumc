@@ -32,17 +32,24 @@
   }
 
   &.internal {
-      > .hero--text {
-        justify-content: flex-end;
-        align-items: flex-end;
-      }
+    > .hero--text {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+
+  &.post {
+    > .hero--text {
+      justify-content: flex-end;
+      align-items: center;
+    }
   }
 
   @include breakpoint(tablet-port) {
-      > .hero-text {
-          .headline {
-              font-size: 3.75em;
-          }
+    > .hero-text {
+      .headline {
+        font-size: 3.75em;
       }
+    }
   }
 }
