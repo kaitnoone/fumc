@@ -1,10 +1,10 @@
 <?php
-/* Template Name: Ministries */
+/* Template Name: Events */
 
 /**
- * The ministries page template.
+ * The events page template.
  *
- * Used when we want to list the ministries custom post type.
+ * Used when we want to show the events calendar from CCB.
  */
 get_header('internal');
 ?>
@@ -63,41 +63,6 @@ get_header('internal');
 
 <?php endwhile;endif;?>
 
-
-
-<div class="main-content main-content--plain">
-    <div class="inner--wide">
-        <!-- MINISTRIES -->
-        <div class="ministries">
-            <?php
-$args = [
-    'post_type' => 'ministry',
-    'posts_per_page' => 10,
-];
-$loop = new WP_Query($args);
-while ($loop->have_posts()) {
-    $loop->the_post();
-    $cover_image_url = get_field('cover_image');
-    $large_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
-    $detail = get_field('show_full_detail_');?>
-            <div class="ministries--block">
-                <div class="ministries--block__image" style="background-image: url(<?php echo $cover_image_url ?>)">
-                    <div class="ministries--block__title"><?php the_title();?></div>
-                    <div class="ministries--block__teaser">
-                        <h3><?php the_title();?></h3>
-                        <?php the_field('teaser');?>
-                    </div>
-                    <a class="ministries--block__link<?php if (!$detail) {?> popup<?php }?>"
-                        href="<?php the_permalink();?>">
-                        Learn More
-                    </a>
-                </div>
-            </div>
-            <?php }?>
-        </div>
-        <!-- END MINISTRIES -->
-    </div>
-</div>
 
 
 

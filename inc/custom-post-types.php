@@ -172,6 +172,62 @@ function cta_post_type()
 add_action('init', 'cta_post_type', 0);
 
 // Register Custom Post Type
+function callout_block_post_type()
+{
+
+    $labels = array(
+        'name' => _x('Callout Blocks', 'Post Type General Name', 'text_domain'),
+        'singular_name' => _x('Callout Block', 'Post Type Singular Name', 'text_domain'),
+        'menu_name' => __('Callout Blocks', 'text_domain'),
+        'name_admin_bar' => __('Callout Block', 'text_domain'),
+        'archives' => __('Item Archives', 'text_domain'),
+        'attributes' => __('Item Attributes', 'text_domain'),
+        'parent_item_colon' => __('Parent Callout Block:', 'text_domain'),
+        'all_items' => __('All Callout Blocks', 'text_domain'),
+        'add_new_item' => __('Add New Callout Block', 'text_domain'),
+        'add_new' => __('New Callout Block', 'text_domain'),
+        'new_item' => __('New Item', 'text_domain'),
+        'edit_item' => __('Edit Callout Block', 'text_domain'),
+        'update_item' => __('Update Callout Block', 'text_domain'),
+        'view_item' => __('View Callout Block', 'text_domain'),
+        'view_items' => __('View Items', 'text_domain'),
+        'search_items' => __('Search Callout Blocks', 'text_domain'),
+        'not_found' => __('No Callout Block found', 'text_domain'),
+        'not_found_in_trash' => __('No Callout Block found in Trash', 'text_domain'),
+        'featured_image' => __('Featured Image', 'text_domain'),
+        'set_featured_image' => __('Set featured image', 'text_domain'),
+        'remove_featured_image' => __('Remove featured image', 'text_domain'),
+        'use_featured_image' => __('Use as featured image', 'text_domain'),
+        'insert_into_item' => __('Insert into item', 'text_domain'),
+        'uploaded_to_this_item' => __('Uploaded to this item', 'text_domain'),
+        'items_list' => __('Items list', 'text_domain'),
+        'items_list_navigation' => __('Items list navigation', 'text_domain'),
+        'filter_items_list' => __('Filter items list', 'text_domain'),
+    );
+    $args = array(
+        'label' => __('Callout Block', 'text_domain'),
+        'description' => __('Callout Block information pages.', 'text_domain'),
+        'labels' => $labels,
+        'supports' => array('title', 'thumbnail', 'comments', 'custom-fields'),
+        'hierarchical' => false,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 5,
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
+        'capability_type' => 'page',
+    );
+    register_post_type('Callout Blocks', $args);
+
+}
+add_action('init', 'callout_block_post_type', 0);
+
+// Register Custom Post Type
 function servicetime_post_type()
 {
 
@@ -282,3 +338,58 @@ function feature_cta_post_type()
 
 }
 add_action('init', 'feature_cta_post_type', 0);
+
+// Register Custom Post Type
+function resource_post_type()
+{
+
+    $labels = array(
+        'name' => _x('Resources', 'Post Type General Name', 'text_domain'),
+        'singular_name' => _x('Resource', 'Post Type Singular Name', 'text_domain'),
+        'menu_name' => __('Resources', 'text_domain'),
+        'name_admin_bar' => __('Resource', 'text_domain'),
+        'archives' => __('Item Archives', 'text_domain'),
+        'attributes' => __('Item Attributes', 'text_domain'),
+        'parent_item_colon' => __('Parent Resource:', 'text_domain'),
+        'all_items' => __('All Resources', 'text_domain'),
+        'add_new_item' => __('Add New Resource', 'text_domain'),
+        'add_new' => __('New Resource', 'text_domain'),
+        'new_item' => __('New Item', 'text_domain'),
+        'edit_item' => __('Edit Resource', 'text_domain'),
+        'update_item' => __('Update Resource', 'text_domain'),
+        'view_item' => __('View Resource', 'text_domain'),
+        'view_items' => __('View Items', 'text_domain'),
+        'search_items' => __('Search Resources', 'text_domain'),
+        'not_found' => __('No Resource found', 'text_domain'),
+        'not_found_in_trash' => __('No Resource found in Trash', 'text_domain'),
+        'featured_image' => __('Featured Image', 'text_domain'),
+        'set_featured_image' => __('Set featured image', 'text_domain'),
+        'remove_featured_image' => __('Remove featured image', 'text_domain'),
+        'use_featured_image' => __('Use as featured image', 'text_domain'),
+        'insert_into_item' => __('Insert into item', 'text_domain'),
+        'uploaded_to_this_item' => __('Uploaded to this item', 'text_domain'),
+        'items_list' => __('Items list', 'text_domain'),
+        'items_list_navigation' => __('Items list navigation', 'text_domain'),
+        'filter_items_list' => __('Filter items list', 'text_domain'),
+    );
+    $args = array(
+        'label' => __('Resource', 'text_domain'),
+        'description' => __('Resource information pages.', 'text_domain'),
+        'labels' => $labels,
+        'supports' => array('title', 'thumbnail', 'comments', 'custom-fields'),
+        'hierarchical' => false,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 7,
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
+        'capability_type' => 'page',
+    );
+    register_post_type('Resources', $args);
+}
+add_action('init', 'resource_post_type', 0);

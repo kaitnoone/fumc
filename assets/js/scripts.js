@@ -112,4 +112,123 @@ jQuery(function($) {
       }
     }
   }
+
+  // setup resources page media carousel
+  let resourcesMedia = document.querySelectorAll(".resources-media")[0];
+  if (resourcesMedia) {
+    var flkty = new Flickity(resourcesMedia, {
+      // options
+      wrapAround: true,
+      cellSelector: ".slide",
+      freeScroll: false,
+      lazyLoad: false
+    });
+
+    let resourceSlides = resourcesMedia.querySelectorAll(".slide");
+    if (resourceSlides.length) {
+      for (let z = 0; z < resourceSlides.length; z++) {
+        let media = resourceSlides[z].querySelectorAll(".media__wrapper")[0];
+        resourceSlides[z].addEventListener("click", function(evt) {
+          evt.preventDefault();
+          if (media.classList.contains("link")) {
+            let location = media.getAttribute("data-link");
+            window.open(location, "_blank");
+          } else {
+            // do the fancybox stuff to get the teaser
+            $.fancybox.open(media);
+          }
+        });
+      }
+    }
+  }
+
+  // setup map on contact page
+  let mapHolder = document.querySelectorAll(".map--pane")[0];
+  let map;
+  let sweetwater = new google.maps.LatLng(32.472654, -100.406005);
+  function initMap() {
+    map = new google.maps.Map(mapHolder, {
+      center: sweetwater,
+      zoom: 17
+    });
+
+    var styles = {
+      default: null,
+      hide: [
+        {
+          featureType: "poi",
+          stylers: [{ visibility: "off" }]
+        }
+      ]
+    };
+
+    map.setOptions({ styles: styles["hide"] });
+
+    var request = {
+      placeId: "ChIJpYyPANoPVoYRTGPkkficyFk",
+      fields: ["name", "formatted_address", "place_id", "geometry"]
+    };
+
+    var infowindow = new google.maps.InfoWindow();
+    var service = new google.maps.places.PlacesService(map);
+
+    service.getDetails(request, function(place, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+        google.maps.event.addListener(marker, "click", function() {
+          infowindow.setContent(
+            "<div><strong>" +
+              place.name +
+              "</strong><br>" +
+              place.formatted_address +
+              "</div>"
+          );
+          infowindow.open(map, this);
+        });
+
+        google.maps.event.trigger(marker, "click");
+      }
+    });
+  }
+  if (mapHolder) {
+    initMap();
+  }
+
+  // SET PLACEHOLDERS ON NINJA FORMS
+  // setTimeout(function() {
+  //   let forms = document.querySelectorAll(".nf-form-layout");
+
+  //   for (let f = 0; f < forms.length; f++) {
+  //     let inputs = forms[f].querySelectorAll("input");
+  //     let textareas = forms[f].querySelectorAll("textarea");
+
+  //     for (let i = 0; i < inputs.length; i++) {
+  //       let parent = inputs[i].parentNode.parentNode.parentNode;
+  //       inputs[i].addEventListener("click", function(evt) {
+  //         if ($(this) == "focused") {
+  //           parent.classList.add("active");
+  //         } else {
+  //           $(this).focus();
+  //           parent.classList.add("active");
+  //         }
+  //       });
+  //       inputs[i].addEventListener("blur", function(evt) {
+  //         parent.classList.remove("active");
+  //       });
+  //     }
+
+  //     for (let i = 0; i < textareas.length; i++) {
+  //       let parent = textareas[i].parentNode.parentNode.parentNode;
+  //       textareas[i].addEventListener("focus", function(evt) {
+  //         parent.classList.add("active");
+  //       });
+  //       textareas[i].addEventListener("blur", function(evt) {
+  //         parent.classList.remove("active");
+  //       });
+  //     }
+  //   }
+  // }, 2000);
 });

@@ -5,6 +5,7 @@
   // background: url("assets/img/Home.jpg");
   background-size: cover;
   padding: 2em;
+  background-color: $color-grey-52;
 
   .eyebrow {
     display: none;
@@ -150,7 +151,6 @@ nav.primary {
   }
 }
 
-
 // MOBILE ONLY STYLES
 @media (max-width: 799px) {
   .nav--toggle {
@@ -255,6 +255,7 @@ nav.primary {
 
   nav.primary {
     padding-top: 20px;
+    padding-left: 20px;
 
     .primary-nav,
     #menu-header {
@@ -291,4 +292,3 @@ nav.primary {
     }
   }
 }
-

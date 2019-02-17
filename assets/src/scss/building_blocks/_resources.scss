@@ -1,4 +1,6 @@
 .resources--wrapper {
+  margin-bottom: 80px;
+
   @include breakpoint(tablet-port) {
     display: grid;
     grid-gap: 20px;
@@ -16,6 +18,12 @@
   justify-content: center;
   align-items: center;
 
+  @media (max-width: 599px) {
+    + .resource--button {
+      margin-top: 1em;
+    }
+  }
+
   &:after {
     content: "";
     display: block;
@@ -30,19 +38,25 @@
 
   &.pdf {
     &:after {
-      background-image: url("../images/PDF.png");
+      background-image: url("../img/PDF.png");
     }
   }
   &.link {
     &:after {
-      background-image: url("../images/Links.png");
+      background-image: url("../img/Links.png");
       height: 22px;
       width: 22px;
     }
   }
   &.form {
     &:after {
-      background-image: url("../images/Forms.png");
+      background-image: url("../img/Forms.png");
     }
+  }
+}
+
+.resources-media {
+  .flickity-page-dots {
+    bottom: -40px;
   }
 }

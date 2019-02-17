@@ -8,13 +8,18 @@
     background: transparent;
   }
 
+  .inner,
+  .inner--wide {
+    flex: 0 0 100%;
+  }
+
   @include breakpoint(tablet-land) {
     .inner {
-      width: 80%;
+      flex: 0 0 80%;
     }
 
     .inner--wide {
-      width: 90%;
+      flex: 0 0 90%;
     }
   }
 }

@@ -13,6 +13,14 @@ form {
     flex: 0 0 100%;
   }
 
+  label {
+    text-transform: uppercase;
+    color: $color-brand-highlight;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: 0.2s ease-in-out all;
+  }
+
   input,
   textarea {
     border-radius: 8px;
@@ -29,6 +37,14 @@ form {
       color: $color-brand-highlight;
       font-weight: 700;
       letter-spacing: 3px;
+      transition: 0.2s ease-out all;
+      opacity: 0;
+    }
+  }
+
+  .nf-field-element {
+    input {
+      background-color: transparent;
     }
   }
 
@@ -45,4 +61,47 @@ form {
       flex: 0 0 49%;
     }
   }
+}
+
+// NINJA FIELDS
+// .nf-field {
+//   &-label {
+//     height: 0;
+//   }
+
+//   label {
+//     opacity: 0;
+//     transition: 0.2s ease-out opacity;
+//     overflow: hidden;
+//   }
+
+//   &.active {
+//     .nf-field-label {
+//       height: auto;
+//     }
+
+//     label {
+//       opacity: 1;
+//       transition: 0.2s ease-in all;
+//     }
+
+//     input,
+//     textarea {
+//       &::placeholder {
+//         opacity: 0;
+//         transition: 0.2s ease-in all;
+//       }
+//     }
+//   }
+// }
+
+// .nf-field-container {
+//   margin-bottom: 5px !important;
+// }
+
+.nf-form-fields-required {
+  margin-bottom: 1em;
+  margin-top: 0;
+  font-family: $font-body;
+  display: none;
 }

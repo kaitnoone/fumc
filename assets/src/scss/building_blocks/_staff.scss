@@ -1,4 +1,6 @@
 .staff {
+  margin-bottom: 6em;
+
   @include breakpoint(tablet-port) {
     display: grid;
     grid-template-columns: 1fr 1fr;

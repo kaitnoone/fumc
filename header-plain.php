@@ -43,10 +43,7 @@
 
     <body <?php body_class();?>>
         <?php // Header ?>
-        <?php
-$cover_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
-?>
-        <header class="header" style="background-image: url('<?php echo $cover_image_url[0] ?>')">
+        <header class="header plain">
             <div class="eyebrow">
                 <div class="container">
                     <a href="/fumc/im-new-here" class="button button--outline">I'm New Here</a>
@@ -67,12 +64,6 @@ $cover_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
                     <nav class="primary">
                         <?php wp_nav_menu(array('theme_location' => 'primary'));?>
                     </nav>
-                </div>
-            </div>
-            <div class="hero internal">
-                <div class="hero--text">
-                    <h1 class="headline"><?php the_post_thumbnail_caption()?></h1>
-                    <div class="subhead"><?php echo get_post(get_post_thumbnail_id())->post_content ?></div>
                 </div>
             </div>
         </header>

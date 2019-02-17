@@ -21,7 +21,7 @@ if (have_posts()):
         if (have_rows('slides')):
         ?>
 
-<ul class="ministry-media">
+<ul class="ministry-media media-carousel">
 
     <?php while (have_rows('slides')): the_row();
 

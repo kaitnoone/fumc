@@ -1,0 +1,30 @@
+.membership_cta {
+  margin: 6em 0 4em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--title {
+    @include heading-style;
+    color: $color-brand-primary;
+    font-size: 2em;
+  }
+
+  &--content {
+    margin: 1em 0;
+    color: $color-text-light;
+    line-height: 1.5;
+
+    p {
+      color: $color-text-light;
+      line-height: 1.5;
+    }
+  }
+
+  @include breakpoint(tablet-land) {
+    &--content {
+      max-width: 600px;
+    }
+  }
+}

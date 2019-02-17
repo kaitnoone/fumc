@@ -69,7 +69,7 @@ $cover_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
                     </nav>
                 </div>
             </div>
-            <div class="hero internal">
+            <div class="hero internal short">
                 <div class="hero--text">
                     <h1 class="headline"><?php the_post_thumbnail_caption()?></h1>
                     <div class="subhead"><?php echo get_post(get_post_thumbnail_id())->post_content ?></div>

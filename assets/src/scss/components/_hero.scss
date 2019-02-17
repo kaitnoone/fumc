@@ -28,13 +28,21 @@
     .subhead {
       @include heading-style-sub;
       font-size: 1.1875em;
+      text-align: center;
+      max-width: 95%;
     }
   }
 
   &.internal {
     > .hero--text {
       justify-content: flex-end;
-      align-items: flex-end;
+      align-items: center;
+    }
+  }
+
+  &.short {
+    &:before {
+      padding-top: (11 / 72) * 100%;
     }
   }
 
@@ -49,6 +57,18 @@
     > .hero-text {
       .headline {
         font-size: 3.75em;
+      }
+    }
+  }
+  @media (min-width: 800px) {
+    > .hero--text {
+      .subhead {
+        max-width: 70%;
+      }
+    }
+    &.internal {
+      > .hero--text {
+        align-items: flex-end;
       }
     }
   }

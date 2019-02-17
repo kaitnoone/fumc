@@ -14,25 +14,19 @@
     text-align: left;
     padding: 0;
   }
+
+  @include breakpoint(tablet-land) {
+    width: 450px;
+  }
 }
-
-// .flickity-page-dots {
-//     bottom: -10px;
-
-//     .dot {
-//         background: transparent;
-//         border: 1px solid $color-teal;
-//         opacity: 1;
-
-//         &.is-selected {
-//             background: $color-teal;
-//         }
-//     }
-// }
 
 .ministries-carousel {
   padding: 0 0 2em;
   margin-bottom: 3em;
+
+  .flickity-page-dots {
+    bottom: -10px;
+  }
 
   .flickity-slider {
     padding: 3em 0;

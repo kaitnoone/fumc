@@ -8,14 +8,13 @@
   @include breakpoint(tablet-land) {
     display: flex;
     margin: 2em 0;
-    
+
     .cta_block {
       flex: 1 0 50%;
       margin: 0 15px;
     }
   }
 }
-
 
 .cta_block {
   border: 2px solid $color-grey-d8;
@@ -32,6 +31,10 @@
     margin-bottom: 2em;
   }
 
+  &--centered {
+    text-align: center;
+  }
+
   &--title {
     @include heading-style;
     color: $color-brand-highlight;
@@ -39,9 +42,42 @@
   }
   &--content {
     margin: 1.5em 0;
+    color: $color-text-light;
+    line-height: 1.5;
+
     p {
       color: $color-text-light;
       line-height: 1.5;
+    }
+  }
+
+  .button--solid {
+    &.Wave {
+      &:after {
+        margin-left: 10px;
+        content: "";
+        display: block;
+        height: 40px;
+        width: 40px;
+        background-image: url("../img/hand.png");
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &.Listen {
+      &:after {
+        margin-left: 10px;
+        content: "";
+        display: block;
+        height: 40px;
+        width: 40px;
+        background-image: url("../img/ear.png");
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
     }
   }
 
