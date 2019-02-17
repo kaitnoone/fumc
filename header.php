@@ -56,7 +56,7 @@ $cover_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
             <div class="main">
                 <div class="container">
                     <div class="logo">
-                        <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Logo1.png"
+                        <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo1.png"
                                 alt="First Methodist Church" /></a>
                     </div>
                     <div class="nav--toggle">
