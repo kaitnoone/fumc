@@ -67,37 +67,6 @@ $cover_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 
                     <nav class="primary">
                         <?php wp_nav_menu(array('theme_location' => 'primary'));?>
-
-                        <!-- <ul class="
-                            primary-nav">
-                        <li class="primary-nav__item has-children">
-                            <a href="#">About</a>
-                            <ul class="child-nav">
-                                <li class="primary-nav__item--child-item">
-                                    <a href="#">Contact Us</a>
-                                </li>
-                                <li class="primary-nav__item--child-item">
-                                    <a href="#">About Us</a>
-                                </li>
-                                <li class="primary-nav__item--child-item">
-                                    <a href="#">Leadership</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="primary-nav__item has-children">
-                            <a href="#">Connect</a>
-                            <ul class="child-nav">
-                                <li class="primary-nav__item--child-item">
-                                    <a href="#">Ministries</a>
-                                </li>
-                                <li class="primary-nav__item--child-item">
-                                    <a href="#">Events</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="primary-nav__item"><a href="#">Resource</a></li>
-                        <li class="primary-nav__item"><a href="#">Give</a></li>
-                        </ul> -->
                     </nav>
                 </div>
             </div>

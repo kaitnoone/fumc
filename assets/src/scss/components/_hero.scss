@@ -28,8 +28,8 @@
     .subhead {
       @include heading-style-sub;
       font-size: 1.1875em;
-      text-align: center;
       max-width: 95%;
+      text-align: center;
     }
   }
 
@@ -69,6 +69,17 @@
     &.internal {
       > .hero--text {
         align-items: flex-end;
+
+        .subhead {
+          max-width: none;
+        }
+      }
+    }
+    &.short {
+      > .hero--text {
+        .subhead {
+          max-width: none;
+        }
       }
     }
   }

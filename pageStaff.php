@@ -55,19 +55,22 @@ get_header('internal');
 
 <?php if (have_posts()): while (have_posts()): the_post();?>
 
+<a name="about"></a>
+<?php if (!empty(get_the_content())) {?>
 <div class="main-content">
     <div class="inner">
         <?php the_content();?>
     </div>
 </div>
+<?php }?>
 
 <?php endwhile;endif;?>
 
-
+<a name="leadership"></a>
 <div class="main-content main-content--plain">
     <div class="inner--wide">
-
         <!-- STAFF -->
+        <h3>Meet the FUMC Staff</h3>
         <div class="staff">
             <?php
 $args = [
@@ -115,45 +118,56 @@ while ($loop->have_posts()) {
             <?php }?>
         </div>
         <!-- END STAFF -->
+    </div>
+</div>
 
 
-        <!-- START THE LOOP -->
-        <?php if (have_posts()): while (have_posts()): the_post();?>
+<!-- START THE LOOP -->
+<?php if (have_posts()): while (have_posts()): the_post();?>
 
-        <!-- IN-BODY CTAS -->
-        <?php
+<!-- IN-BODY CTAS -->
+<?php
         $ctas = get_field('inbody_ctas');
         if ($ctas): ?>
-        <div class="cta--wrapper">
-            <?php foreach ($ctas as $post): ?>
-            <?php $image = get_field('cta_block-image');?>
-            <?php $texture = get_field('cta_block-textured_background');?>
-            <div
-                class="cta_block<?php if ($image) {?> cta_block--withimage<?php }?><?php if ($texture) {?> cta_block--textured<?php }?>">
-                <?php if ($image) {?>
-                <div class="cta_block--image">
-                    <img src="<?php the_field('cta_block-image');?>" alt="<?php the_title();?>" />
-                </div>
-                <?php }?>
-                <div class="cta_block--content-wrap">
-                    <div class="cta_block--title"><?php the_title();?></div>
-                    <div class="cta_block--content">
-                        <?php the_field('cta_block-content');?>
-                    </div>
-                    <div class="cta_block--link">
-                        <a class="button--solid <?php the_field('cta_block-link_icon');?>"
-                            href="<?php the_field('cta_block-link');?>"><?php the_field('cta_block-link_text');?></a>
-                    </div>
-                </div>
-            </div>
-            <?php endforeach;?>
+<div class="cta--wrapper">
+    <?php foreach ($ctas as $post): ?>
+    <?php $image = get_field('cta_block-image');?>
+    <?php $texture = get_field('cta_block-textured_background');?>
+    <div
+        class="cta_block<?php if ($image) {?> cta_block--withimage<?php }?><?php if ($texture) {?> cta_block--textured<?php }?>">
+        <?php if ($image) {?>
+        <div class="cta_block--image">
+            <img src="<?php the_field('cta_block-image');?>" alt="<?php the_title();?>" />
         </div>
-        <?php endif;?>
+        <?php }?>
+        <div class="cta_block--content-wrap">
+            <div class="cta_block--title"><?php the_title();?></div>
+            <div class="cta_block--content">
+                <?php the_field('cta_block-content');?>
+            </div>
+            <?php
+        $link = get_field('cta_block-link');
+
+        if ($link):
+            $link_url = $link['url'];
+            $link_target = $link['target'] ? $link['target'] : '_self';
+            ?>
+            <div class="cta_block--link">
+                <a target="<?php echo $link_target ?>" class="button--solid <?php the_field('cta_block-link_icon');?>"
+                    href="<?php echo $link_url ?>"><?php the_field('cta_block-link_text');?></a>
+            </div>
+            <?php endif;?>
+        </div>
+    </div>
+    <?php endforeach;?>
+</div>
+<?php endif;?>
 
 
-        <!-- PAUSE THE LOOP -->
-        <?php endwhile;endif;?>
-
+<!-- PAUSE THE LOOP -->
+<?php endwhile;endif;?>
+<div class="main-content main-content--plain">
+    <div class="inner-wide">
         <!-- START THE LOOP -->
         <?php if (have_posts()): while (have_posts()): the_post();?>
 
@@ -206,41 +220,47 @@ while ($loop->have_posts()) {
 <!-- START THE LOOP -->
 <?php if (have_posts()): while (have_posts()): the_post();?>
 
-<div class="main-content main-content--plain">
-    <div class="inner--wide">
-        <!-- PRE-FOOTER CTAS -->
-        <?php
+
+<!-- PRE-FOOTER CTAS -->
+<?php
         $fctas = get_field('prefooter_ctas');
         if ($fctas): ?>
-        <div class="cta--wrapper">
-            <?php foreach ($fctas as $post): ?>
-            <?php $fimage = get_field('cta_block-image');?>
-            <?php $texture = get_field('cta_block-textured_background');?>
-            <div
-                class="cta_block<?php if ($fimage) {?> cta_block--withimage<?php }?><?php if ($texture) {?> cta_block--textured<?php }?>">
-                <?php if ($fimage) {?>
-                <div class="cta_block--image">
-                    <img src="<?php the_field('cta_block-image');?>" alt="<?php the_title();?>" />
-                </div>
-                <?php }?>
-                <div class="cta_block--content-wrap">
-                    <div class="cta_block--title"><?php the_title();?></div>
-                    <div class="cta_block--content">
-                        <?php the_field('cta_block-content');?>
-                    </div>
-                    <div class="cta_block--link">
-                        <a class="button--solid <?php the_field('cta_block-link_icon');?>"
-                            href="<?php the_field('cta_block-link');?>"><?php the_field('cta_block-link_text');?></a>
-                    </div>
-                </div>
-            </div>
-            <?php endforeach;?>
+<div class="cta--wrapper">
+    <?php foreach ($fctas as $post): ?>
+    <?php $fimage = get_field('cta_block-image');?>
+    <?php $texture = get_field('cta_block-textured_background');?>
+    <div
+        class="cta_block<?php if ($fimage) {?> cta_block--withimage<?php }?><?php if ($texture) {?> cta_block--textured<?php }?>">
+        <?php if ($fimage) {?>
+        <div class="cta_block--image">
+            <img src="<?php the_field('cta_block-image');?>" alt="<?php the_title();?>" />
         </div>
-        <?php endif;
+        <?php }?>
+        <div class="cta_block--content-wrap">
+            <div class="cta_block--title"><?php the_title();?></div>
+            <div class="cta_block--content">
+                <?php the_field('cta_block-content');?>
+            </div>
+            <?php
+        $link = get_field('cta_block-link');
+
+        if ($link):
+            $link_url = $link['url'];
+            $link_target = $link['target'] ? $link['target'] : '_self';
+            ?>
+            <div class="cta_block--link">
+                <a target="<?php echo $link_target ?>" class="button--solid <?php the_field('cta_block-link_icon');?>"
+                    href="<?php echo $link_url ?>"><?php the_field('cta_block-link_text');?></a>
+            </div>
+            <?php endif;?>
+        </div>
+    </div>
+    <?php endforeach;?>
+</div>
+<?php endif;
 
 ?>
-    </div>
-</div>
+
 <!-- PAUSE THE LOOP -->
 <?php endwhile;endif;?>
 

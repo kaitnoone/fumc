@@ -125,10 +125,18 @@ while ($loop->have_posts()) {
             <div class="cta_block--content">
                 <?php the_field('cta_block-content');?>
             </div>
+            <?php
+        $link = get_field('cta_block-link');
+
+        if ($link):
+            $link_url = $link['url'];
+            $link_target = $link['target'] ? $link['target'] : '_self';
+            ?>
             <div class="cta_block--link">
-                <a class="button--solid <?php the_field('cta_block-link_icon');?>"
-                    href="<?php the_field('cta_block-link');?>"><?php the_field('cta_block-link_text');?></a>
+                <a target="<?php echo $link_target ?>" class="button--solid <?php the_field('cta_block-link_icon');?>"
+                    href="<?php echo $link_url ?>"><?php the_field('cta_block-link_text');?></a>
             </div>
+            <?php endif;?>
         </div>
     </div>
     <?php endforeach;?>
@@ -194,10 +202,18 @@ while ($loop->have_posts()) {
             <div class="cta_block--content">
                 <?php the_field('cta_block-content');?>
             </div>
+            <?php
+        $link = get_field('cta_block-link');
+
+        if ($link):
+            $link_url = $link['url'];
+            $link_target = $link['target'] ? $link['target'] : '_self';
+            ?>
             <div class="cta_block--link">
-                <a class="button--solid <?php the_field('cta_block-link_icon');?>"
-                    href="<?php the_field('cta_block-link');?>"><?php the_field('cta_block-link_text');?></a>
+                <a target="<?php echo $link_target ?>" class="button--solid <?php the_field('cta_block-link_icon');?>"
+                    href="<?php echo $link_url ?>"><?php the_field('cta_block-link_text');?></a>
             </div>
+            <?php endif;?>
         </div>
     </div>
     <?php endforeach;?>

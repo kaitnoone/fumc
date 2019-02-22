@@ -390,6 +390,6 @@ function resource_post_type()
         'publicly_queryable' => true,
         'capability_type' => 'page',
     );
-    register_post_type('Resources', $args);
+    register_post_type('resources', $args);
 }
 add_action('init', 'resource_post_type', 0);

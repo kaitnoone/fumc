@@ -1,5 +1,6 @@
 .cta--wrapper {
   margin: 2em 0;
+  max-width: 100%;
 
   .cta_block {
     margin: 0 15px 2em;
@@ -10,7 +11,7 @@
     margin: 2em 0;
 
     .cta_block {
-      flex: 1 0 50%;
+      flex: 1 0 45%;
       margin: 0 15px;
     }
   }
