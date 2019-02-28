@@ -1,15 +1,19 @@
 jQuery(function($) {
-  // SET UP THE MENU
+  // SET UP THE PRIMARY MENU
   // get variables
   const CSS_OPEN_CLASS = "open";
+  let logo = document.querySelectorAll(".main .logo")[0].cloneNode(true);
   let primaryNavCon = document.querySelectorAll("nav.primary")[0];
   let primaryNav = document.querySelectorAll(
     ".menu-header-container > .menu"
   )[0];
-  let levelOneMIs = document.querySelectorAll(
+  let primaryLevelOneMIs = document.querySelectorAll(
     ".menu-header-container > .menu > .menu-item-has-children"
   );
   let toggle = document.querySelectorAll(".nav--toggle")[0];
+
+  // append the logo copy to show at mobile
+  primaryNavCon.prepend(logo);
 
   // set up the mobile toggle
   toggle.addEventListener("click", function(evt) {
@@ -17,29 +21,59 @@ jQuery(function($) {
     toggle.classList.toggle(CSS_OPEN_CLASS);
   });
 
-  for (let i = 0; i < levelOneMIs.length; i++) {
+  for (let i = 0; i < primaryLevelOneMIs.length; i++) {
     // create toggle arrow element to append
     let arrow = document.createElement("span");
     arrow.classList.add("arrow");
 
     // add toggle arrow
-    levelOneMIs[i].appendChild(arrow);
-    let childArrow = levelOneMIs[i].querySelector("span.arrow");
+    primaryLevelOneMIs[i].appendChild(arrow);
+    let childArrow = primaryLevelOneMIs[i].querySelector("span.arrow");
 
     // set up click handler
     childArrow.addEventListener("click", function(evt) {
-      if (levelOneMIs[i].classList.contains(CSS_OPEN_CLASS)) {
-        levelOneMIs.forEach(function(element) {
+      if (primaryLevelOneMIs[i].classList.contains(CSS_OPEN_CLASS)) {
+        primaryLevelOneMIs.forEach(function(element) {
           element.classList.remove(CSS_OPEN_CLASS);
         });
       } else {
-        levelOneMIs.forEach(function(element) {
+        primaryLevelOneMIs.forEach(function(element) {
           element.classList.remove(CSS_OPEN_CLASS);
         });
-        levelOneMIs[i].classList.add(CSS_OPEN_CLASS);
+        primaryLevelOneMIs[i].classList.add(CSS_OPEN_CLASS);
       }
     });
   }
+
+  // SET UP THE FOOTER MENU
+  // get variables
+  // let footerLevelOneMIs = document.querySelectorAll(
+  //   ".menu-footer-container > .menu > .menu-item-has-children"
+  // );
+
+  // for (let i = 0; i < footerLevelOneMIs.length; i++) {
+  //   // create toggle arrow element to append
+  //   let arrow = document.createElement("span");
+  //   arrow.classList.add("arrow");
+
+  //   // add toggle arrow
+  //   footerLevelOneMIs[i].appendChild(arrow);
+  //   let footerChildArrow = footerLevelOneMIs[i].querySelector("span.arrow");
+
+  //   // set up click handler
+  //   footerChildArrow.addEventListener("click", function(evt) {
+  //     if (footerLevelOneMIs[i].classList.contains(CSS_OPEN_CLASS)) {
+  //       footerLevelOneMIs.forEach(function(element) {
+  //         element.classList.remove(CSS_OPEN_CLASS);
+  //       });
+  //     } else {
+  //       footerLevelOneMIs.forEach(function(element) {
+  //         element.classList.remove(CSS_OPEN_CLASS);
+  //       });
+  //       footerLevelOneMIs[i].classList.add(CSS_OPEN_CLASS);
+  //     }
+  //   });
+  // }
 
   // initialize ministries carousel
   var ministryCarousel = document.querySelectorAll(".ministries-carousel")[0];
@@ -196,39 +230,4 @@ jQuery(function($) {
   if (mapHolder) {
     initMap();
   }
-
-  // SET PLACEHOLDERS ON NINJA FORMS
-  // setTimeout(function() {
-  //   let forms = document.querySelectorAll(".nf-form-layout");
-
-  //   for (let f = 0; f < forms.length; f++) {
-  //     let inputs = forms[f].querySelectorAll("input");
-  //     let textareas = forms[f].querySelectorAll("textarea");
-
-  //     for (let i = 0; i < inputs.length; i++) {
-  //       let parent = inputs[i].parentNode.parentNode.parentNode;
-  //       inputs[i].addEventListener("click", function(evt) {
-  //         if ($(this) == "focused") {
-  //           parent.classList.add("active");
-  //         } else {
-  //           $(this).focus();
-  //           parent.classList.add("active");
-  //         }
-  //       });
-  //       inputs[i].addEventListener("blur", function(evt) {
-  //         parent.classList.remove("active");
-  //       });
-  //     }
-
-  //     for (let i = 0; i < textareas.length; i++) {
-  //       let parent = textareas[i].parentNode.parentNode.parentNode;
-  //       textareas[i].addEventListener("focus", function(evt) {
-  //         parent.classList.add("active");
-  //       });
-  //       textareas[i].addEventListener("blur", function(evt) {
-  //         parent.classList.remove("active");
-  //       });
-  //     }
-  //   }
-  // }, 2000);
 });

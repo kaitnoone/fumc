@@ -31,6 +31,7 @@ form {
     font-weight: 700;
     letter-spacing: 3px;
     margin-bottom: 1em;
+    background-color: transparent;
 
     &::placeholder {
       text-transform: uppercase;
@@ -42,11 +43,11 @@ form {
     }
   }
 
-  .nf-field-element {
-    input {
-      background-color: transparent;
-    }
-  }
+  // .nf-field-element {
+  //   input {
+  //     background-color: transparent;
+  //   }
+  // }
 
   input[type="submit"],
   button[type="submit"] {
@@ -63,41 +64,17 @@ form {
   }
 }
 
-// NINJA FIELDS
-// .nf-field {
-//   &-label {
-//     height: 0;
-//   }
-
-//   label {
-//     opacity: 0;
-//     transition: 0.2s ease-out opacity;
-//     overflow: hidden;
-//   }
-
-//   &.active {
-//     .nf-field-label {
-//       height: auto;
-//     }
-
-//     label {
-//       opacity: 1;
-//       transition: 0.2s ease-in all;
-//     }
-
-//     input,
-//     textarea {
-//       &::placeholder {
-//         opacity: 0;
-//         transition: 0.2s ease-in all;
-//       }
-//     }
-//   }
-// }
-
-// .nf-field-container {
-//   margin-bottom: 5px !important;
-// }
+.field-wrap > div input[type="checkbox"],
+.field-wrap button,
+.field-wrap input[type="button"],
+.field-wrap input[type="submit"] {
+  @include button-solid($color-brand-secondary);
+  // ninja overrides
+  padding: 7px 25px;
+  border: 0;
+  min-height: 40px;
+  cursor: pointer;
+}
 
 .nf-form-fields-required {
   margin-bottom: 1em;

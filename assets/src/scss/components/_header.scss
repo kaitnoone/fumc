@@ -2,10 +2,10 @@
   Header
 ------------------------------------------------------------------------------*/
 .header {
-  // background: url("assets/img/Home.jpg");
   background-size: cover;
   padding: 2em;
   background-color: $color-grey-52;
+  background-position: center center;
 
   .eyebrow {
     display: none;
@@ -53,6 +53,9 @@
 }
 
 nav.primary {
+  .logo {
+    display: none;
+  }
   .primary-nav,
   #menu-header {
     @include reset-list;
@@ -67,7 +70,6 @@ nav.primary {
         // Style the down arrow
         .arrow {
           display: block;
-
           height: 40px;
           width: 30px;
           display: flex;
@@ -191,10 +193,17 @@ nav.primary {
     z-index: 88;
     background: $color-brand-secondary;
     transition: 0.1s ease-out all;
+    min-width: 0;
+    overflow: hidden;
 
     &.open {
       left: 0;
       transition: 0.1s ease-in all;
+      min-width: none;
+
+      .logo {
+        display: block;
+      }
 
       .primary-nav,
       #menu-header {

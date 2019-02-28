@@ -73,18 +73,24 @@
           position: relative;
 
           // Style the down arrow
-          &:after {
+          .arrow {
             display: block;
-            content: "";
-            height: 0;
-            width: 0;
-            border-top: 6px solid $color-brand-highlight;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            position: absolute;
-            right: 13px;
-            top: 22px;
-            margin-top: -4px;
+            height: 40px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:after {
+              content: "";
+              height: 0;
+              width: 0;
+              border-top: 6px solid $color-grey-52;
+              border-left: 6px solid transparent;
+              border-right: 6px solid transparent;
+              transition: 0.1s ease-out all;
+            }
           }
         }
       }
@@ -183,16 +189,20 @@
         align-content: center;
         justify-content: space-around;
 
-        &__item,
-        .menu-item {
-          &.has-children,
-          &.menu-item-has-children {
-            a {
-              padding-left: 20px;
-              padding-right: 40px;
-            }
-          }
+        a {
+          text-align: center;
         }
+
+        // &__item,
+        // .menu-item {
+        //   &.has-children,
+        //   &.menu-item-has-children {
+        //     a {
+        //       padding-left: 20px;
+        //       padding-right: 40px;
+        //     }
+        //   }
+        // }
       }
     }
   }
