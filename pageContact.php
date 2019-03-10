@@ -74,8 +74,24 @@ get_header('short');
             <div class="map--pane"></div>
             <div class="map--details">
                 <div class="address"><?php the_field('address');?></div>
-                <div class="phone"><?php the_field('phone')?></div>
-                <div class="fax"><?php the_field('fax')?></div>
+                <?php
+        $phone = get_field('phone');
+        $phone_fmt = preg_replace('/[^0-9]/', '', $phone);
+        ?>
+                <div class="phone">
+                    <a href="tel:<?php echo $phone_fmt ?>">
+                        <?php echo $phone ?>
+                    </a>
+                </div>
+                <div class="fax">
+                    <?php
+        $fax = get_field('fax');
+        $fax_fmt = preg_replace('/[^0-9]/', '', $fax);
+        ?>
+                    <a href="tel:<?php echo $fax_fmt ?>">
+                        <?php echo $fax ?>
+                    </a>
+                </div>
                 <div class="email"><a href="mailto:<?php the_field('email')?>"><?php the_field('email')?>
                     </a></div>
             </div>
@@ -97,13 +113,12 @@ get_header('short');
         $link = get_field('cta_block-link');
 
         if ($link):
-            $link_url = $link['url'];
-            $link_target = $link['target'] ? $link['target'] : '_self';
+            // $link_url = $link['url'];
+            // $link_target = $link['target'] ? $link['target'] : '_self';
             ?>
                         <div class="cta_block--link">
-                            <a target="<?php echo $link_target ?>"
-                                class="button--solid <?php the_field('cta_block-link_icon');?>"
-                                href="<?php echo $link_url ?>"><?php the_field('cta_block-link_text');?></a>
+                            <a target="_blank" class="button--solid <?php the_field('cta_block-link_icon');?>"
+                                href="<?php echo $link ?>"><?php the_field('cta_block-link_text');?></a>
                         </div>
                         <?php endif;?>
                     </div>

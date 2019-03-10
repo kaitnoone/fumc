@@ -8,14 +8,29 @@
     background: transparent;
   }
 
+  .inner {
+    p {
+      text-align: justify;
+    }
+  }
+
   .inner,
   .inner--wide {
     flex: 0 0 100%;
+
+    h2,
+    h3 {
+      margin-top: 0;
+    }
   }
 
   @include breakpoint(tablet-land) {
     .inner {
       flex: 0 0 80%;
+
+      p {
+        text-align: left;
+      }
     }
 
     .inner--wide {

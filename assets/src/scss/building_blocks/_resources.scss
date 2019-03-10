@@ -38,19 +38,19 @@
 
   &.pdf {
     &:after {
-      background-image: url("../img/PDF.png");
+      background-image: url("../img/pdf.png");
     }
   }
   &.link {
     &:after {
-      background-image: url("../img/Links.png");
+      background-image: url("../img/links.png");
       height: 22px;
       width: 22px;
     }
   }
   &.form {
     &:after {
-      background-image: url("../img/Forms.png");
+      background-image: url("../img/forms.png");
     }
   }
 }

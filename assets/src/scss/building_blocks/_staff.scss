@@ -1,6 +1,4 @@
 .staff {
-  margin-bottom: 6em;
-
   @include breakpoint(tablet-port) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -15,6 +13,7 @@
 .staff--member {
   line-height: 1.5;
   color: $color-grey-52;
+  background: $color-grey-f3;
 
   &__headshot {
     img {
@@ -23,7 +22,6 @@
   }
 
   &__info {
-    background: $color-grey-f3;
     padding: 15px 10px;
   }
 
@@ -44,6 +42,15 @@
     display: flex;
     flex-wrap: wrap;
 
+    a {
+      color: $color-grey-52;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
     .staff--member__phone {
       display: flex;
 
@@ -61,14 +68,14 @@
       margin-right: 5px;
       &:before {
         content: "";
-        background-image: url("../img/Cell.png");
+        background-image: url("../img/cell.png");
       }
     }
 
     .office {
       &:before {
         content: "";
-        background-image: url("../img/Phone.png");
+        background-image: url("../img/phone.png");
       }
     }
   }
@@ -99,7 +106,7 @@
     }
 
     &-facebook {
-      background: url("../img/Facebook.png") no-repeat;
+      background: url("../img/facebook.png") no-repeat;
       background-size: contain;
       height: 15px;
       width: 15px;
@@ -107,8 +114,9 @@
       text-indent: -999px;
       margin-right: 5px;
     }
+
     &-twitter {
-      background: url("../img/Twitter.png") no-repeat;
+      background: url("../img/twitter.png") no-repeat;
       background-size: contain;
       height: 15px;
       width: 15px;

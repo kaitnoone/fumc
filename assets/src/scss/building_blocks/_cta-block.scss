@@ -20,7 +20,7 @@
 .cta_block {
   border: 2px solid $color-grey-d8;
   border-radius: 8px;
-  padding: 4.5em 4em;
+  padding: 2.5em 2em;
 
   &--textured {
     background: url("../img/texture1.png") repeat;
@@ -28,7 +28,6 @@
   }
 
   &--image {
-    margin-right: 2em;
     margin-bottom: 2em;
   }
 
@@ -49,6 +48,7 @@
     p {
       color: $color-text-light;
       line-height: 1.5;
+      text-align: justify;
     }
   }
 
@@ -96,6 +96,16 @@
       .cta_block--content-wrap {
         flex: 1;
         padding-left: 20px;
+      }
+    }
+
+    &--image {
+      margin-right: 2em;
+    }
+
+    &--content {
+      p {
+        text-align: left;
       }
     }
   }

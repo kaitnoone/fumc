@@ -78,7 +78,7 @@ get_header('short');
         <?php if (have_posts()): while (have_posts()): the_post();?>
 
         <!-- DISPLAY THE PDFS -->
-        <h2>PDFs</h2>
+        <h3>PDFs</h3>
         <div class="resources--wrapper pdf">
 
             <?php
@@ -103,7 +103,7 @@ get_header('short');
         <!-- START THE LOOP -->
         <?php if (have_posts()): while (have_posts()): the_post();?>
 
-        <h2>Forms</h2>
+        <h3>Forms</h3>
         <div class="resources--wrapper forms">
 
             <?php
@@ -130,7 +130,7 @@ get_header('short');
         <!-- START THE LOOP -->
         <?php if (have_posts()): while (have_posts()): the_post();?>
 
-        <h2>Helpful Links</h2>
+        <h3>Helpful Links</h3>
         <div class="resources--wrapper links">
 
             <?php

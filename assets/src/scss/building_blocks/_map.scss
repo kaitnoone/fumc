@@ -25,6 +25,16 @@
       font-weight: 700;
       text-transform: uppercase;
 
+      a {
+        color: $color-brand-highlight;
+        text-decoration: none;
+        word-break: break-all;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
       &:before {
         flex-shrink: 0;
         display: block;
@@ -55,15 +65,6 @@
     .email {
       &:before {
         background-image: url("../img/email.png");
-      }
-      a {
-        color: $color-brand-highlight;
-        text-decoration: none;
-        word-break: break-all;
-
-        &:hover {
-          text-decoration: underline;
-        }
       }
     }
   }

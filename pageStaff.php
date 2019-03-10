@@ -94,8 +94,25 @@ while ($loop->have_posts()) {
                     <div class="staff--member__name"><?php the_title()?></div>
                     <div class="staff--member__title"><?php the_field('title');?></div>
                     <div class="staff--member__phones">
-                        <div class="staff--member__phone mobile"><?php the_field('mobile_phone');?></div>
-                        <div class="staff--member__phone office"><?php the_field('phone');?></div>
+                        <div class="staff--member__phone mobile">
+                            <?php
+$mphone = get_field('mobile_phone');
+    $mphone_fmt = preg_replace('/[^0-9]/', '', $mphone);
+    ?>
+                            <a href="tel:<?php echo $mphone_fmt ?>">
+                                <?php echo $mphone ?>
+                            </a>
+                        </div>
+                        <div class="staff--member__phone office">
+                            <?php
+$phone = get_field('phone');
+    $phone_fmt = preg_replace('/[^0-9]/', '', $phone);
+    ?>
+                            <a href="tel:<?php echo $phone_fmt ?>">
+                                <?php echo $phone ?>
+                            </a>
+
+                        </div>
                     </div>
                     <div class="staff--member__email">
                         <a href="mailto:<?php the_field('email');?>"><?php the_field('email');?></a>

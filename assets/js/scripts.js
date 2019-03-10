@@ -152,9 +152,11 @@ jQuery(function($) {
   if (resourcesMedia) {
     var flkty = new Flickity(resourcesMedia, {
       // options
+      freeScroll: true,
+      contain: true,
       wrapAround: true,
       cellSelector: ".slide",
-      freeScroll: false,
+      // freeScroll: false,
       lazyLoad: false
     });
 

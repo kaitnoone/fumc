@@ -66,7 +66,7 @@ get_header('internal');
 <div class="main-content main-content--plain">
     <div class="inner--wide">
         <iframe src="https://fumcsweetwater.ccbchurch.com/w_calendar.php" frameborder="0" width="100%"
-            height="1100"></iframe>
+            height="900"></iframe>
     </div>
 </div>
 
