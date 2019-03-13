@@ -11,12 +11,12 @@
   @include breakpoint(tablet-port) {
     width: 41%;
     margin: 0 auto;
-    text-align: left;
     padding: 0;
   }
 
   @include breakpoint(tablet-land) {
     width: 450px;
+    text-align: left;
   }
 }
 
@@ -32,8 +32,9 @@
     bottom: -10px;
   }
 
-  .flickity-slider {
-    padding: 3em 0;
+  .flickity-viewport {
+    padding: 2.5em 0 2em;
+    box-sizing: content-box;
   }
 
   .flickity-prev-next-button {
@@ -56,7 +57,7 @@
 
   .ministry {
     width: 100%;
-    height: 360px;
+    // height: 360px;
     transition: 0.2s ease-in-out all;
 
     &.is-selected {
@@ -127,7 +128,7 @@
       width: 40%;
 
       &.is-selected {
-        transform: scale(1.25, 1.25) translateY(10px);
+        transform: scale(1.25, 1.25);
       }
     }
 
@@ -146,9 +147,19 @@
     }
   }
 
-  @include breakpoint(tablet-land) {
-    .flickity-prev-next-button {
-      top: 50%;
-    }
-  }
+  // @include breakpoint(tablet-port) {
+  //   .flickity-prev-next-button {
+  //     top: 22vw;
+  //   }
+  // }
+  // @include breakpoint(tablet-port) {
+  //   .flickity-prev-next-button {
+  //     top: 18vw;
+  //   }
+  // }
+  // @include breakpoint(desktop) {
+  //   .flickity-prev-next-button {
+  //     top: 50%;
+  //   }
+  // }
 }

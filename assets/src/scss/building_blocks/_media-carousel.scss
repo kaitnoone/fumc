@@ -4,6 +4,18 @@
   list-style: none;
   margin-bottom: 70px;
 
+  &.resources-media.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .slide {
+      margin: 10px;
+      position: relative;
+    }
+  }
+
   .image {
     width: 425px;
     height: 425px;

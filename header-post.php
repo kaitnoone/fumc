@@ -14,8 +14,24 @@
         <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery.fancybox.js"></script>
         <script type="text/javascript"
             src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/flickity.pkgd.min.js"></script>
-        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/scripts.js">
+
+        <script>
+        Userback = window.Userback || {};
+        Userback.access_token = '5557|8852|JbP1zuQqHzH3Df6Wsvhubtgy6OSruCIv6xjkoKsi7pF4AXWYyi';
+
+        (function(id) {
+            if (document.getElementById(id)) {
+                return;
+            }
+            var s = document.createElement('script');
+            s.id = id;
+            s.async = 1;
+            s.src = 'https://static.userback.io/widget/v1.js';
+            var parent_node = document.head || document.body;
+            parent_node.appendChild(s);
+        })('userback-sdk');
         </script>
+
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135805224-1"></script>
         <script>

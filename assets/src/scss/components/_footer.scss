@@ -163,16 +163,15 @@
         flex: 0 0 45%;
         padding: 0 15px;
         margin-bottom: 0;
-
-        .textwidget {
-          padding-left: 20px;
-        }
       }
 
       &__buttons {
+        flex: 0 0 43%;
+        justify-content: flex-end;
+
         p {
-          flex: 0 0 45%;
-          justify-content: flex-end;
+          // flex: 0 0 45%;
+          // justify-content: flex-end;
         }
       }
     }
@@ -223,10 +222,18 @@
       &__address {
         flex: 0 0 35%;
         padding: 0;
+
+        .footer-widget {
+          padding-left: 20px;
+        }
       }
 
       &__buttons {
         flex: 0 0 40%;
+
+        p {
+          justify-content: flex-end;
+        }
       }
     }
   }

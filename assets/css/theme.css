@@ -1898,6 +1898,29 @@ nav.primary a {
 	margin-bottom: 70px;
 }
 
+.media-carousel.resources-media.flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.media-carousel.resources-media.flex .slide {
+	margin: 10px;
+	position: relative;
+}
+
 .media-carousel .image {
 	width: 425px;
 	height: 425px;
@@ -2007,8 +2030,10 @@ nav.primary a {
 	bottom: -10px;
 }
 
-.ministries-carousel .flickity-slider {
-	padding: 3em 0;
+.ministries-carousel .flickity-viewport {
+	padding: 2.5em 0 2em;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
 }
 
 .ministries-carousel .flickity-prev-next-button {
@@ -2033,7 +2058,6 @@ nav.primary a {
 
 .ministries-carousel .ministry {
 	width: 100%;
-	height: 360px;
 	-webkit-transition: 0.2s ease-in-out all;
 	-o-transition: 0.2s ease-in-out all;
 	transition: 0.2s ease-in-out all;
@@ -2568,15 +2592,11 @@ nav.primary a {
 	margin-bottom: 0;
 }
 
-.footer-info__address .textwidget {
-	padding-left: 20px;
-}
-
-.footer-info__buttons p {
+.footer-info__buttons {
 	-webkit-box-flex: 0;
-	-webkit-flex: 0 0 45%;
-	-ms-flex: 0 0 45%;
-	flex: 0 0 45%;
+	-webkit-flex: 0 0 43%;
+	-ms-flex: 0 0 43%;
+	flex: 0 0 43%;
 	-webkit-box-pack: end;
 	-webkit-justify-content: flex-end;
 	-ms-flex-pack: end;
@@ -2733,7 +2753,6 @@ form .half {
 .ministries-carousel-intro {
 	width: 41%;
 	margin: 0 auto;
-	text-align: left;
 	padding: 0;
 }
 
@@ -2742,9 +2761,9 @@ form .half {
 }
 
 .ministries-carousel .ministry.is-selected {
-	-webkit-transform: scale(1.25, 1.25) translateY(10px);
-	-ms-transform: scale(1.25, 1.25) translateY(10px);
-	transform: scale(1.25, 1.25) translateY(10px);
+	-webkit-transform: scale(1.25, 1.25);
+	-ms-transform: scale(1.25, 1.25);
+	transform: scale(1.25, 1.25);
 }
 
 .ministries {
@@ -2975,6 +2994,7 @@ nav.primary #menu-header .menu-item-has-children .arrow {
 
 .ministries-carousel-intro {
 	width: 450px;
+	text-align: left;
 }
 
 .ministries-carousel .ministry {
@@ -2986,10 +3006,6 @@ nav.primary #menu-header .menu-item-has-children .arrow {
 	-webkit-align-items: flex-end;
 	-ms-flex-align: end;
 	align-items: flex-end;
-}
-
-.ministries-carousel .flickity-prev-next-button {
-	top: 50%;
 }
 
 .ministries {
@@ -3035,11 +3051,22 @@ nav.primary #menu-header .menu-item-has-children .arrow {
 	padding: 0;
 }
 
+.footer-info__address .footer-widget {
+	padding-left: 20px;
+}
+
 .footer-info__buttons {
 	-webkit-box-flex: 0;
 	-webkit-flex: 0 0 40%;
 	-ms-flex: 0 0 40%;
 	flex: 0 0 40%;
+}
+
+.footer-info__buttons p {
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
 }
 
 .ministries-carousel .ministry {
@@ -3058,7 +3085,6 @@ nav.primary #menu-header .menu-item-has-children .arrow {
 }
 
 .service-times .service-times__title {
-	margin-bottom: 0;
 	-webkit-box-flex: 0;
 	-webkit-flex: 0 1 30%;
 	-ms-flex: 0 1 30%;
@@ -3072,6 +3098,14 @@ nav.primary #menu-header .menu-item-has-children .arrow {
 	-ms-flex-positive: 2;
 	flex-grow: 2;
 	width: 80%;
+}
+
+}
+
+@media (min-width: 1800px) {
+
+body {
+	font-size: 1.2rem;
 }
 
 }

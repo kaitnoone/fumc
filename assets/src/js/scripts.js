@@ -83,7 +83,9 @@ jQuery(function($) {
       wrapAround: true,
       cellAlign: "center",
       contain: true,
-      cellSelector: ".ministry"
+      cellSelector: ".ministry",
+      adaptiveHeight: false,
+      imagesLoaded: true
     });
 
     // setup ministry carousel click handler
@@ -104,7 +106,6 @@ jQuery(function($) {
 
   // setup ministry page click handler
   let ministryPageLinks = document.querySelectorAll(".ministries--block");
-  console.log(ministryPageLinks.length);
   if (ministryPageLinks.length) {
     for (let y = 0; y < ministryPageLinks.length; y++) {
       let teaser = ministryPageLinks[y].querySelectorAll(
@@ -149,21 +150,25 @@ jQuery(function($) {
 
   // setup resources page media carousel
   let resourcesMedia = document.querySelectorAll(".resources-media")[0];
-  if (resourcesMedia) {
-    var flkty = new Flickity(resourcesMedia, {
-      // options
-      freeScroll: true,
-      contain: true,
-      wrapAround: true,
-      cellSelector: ".slide",
-      // freeScroll: false,
-      lazyLoad: false
-    });
 
+  if (resourcesMedia) {
     let resourceSlides = resourcesMedia.querySelectorAll(".slide");
+    if (resourceSlides.length > 4) {
+      var flkty = new Flickity(resourcesMedia, {
+        // options
+        // freeScroll: true,
+        // contain: true,
+        wrapAround: true,
+        cellSelector: ".slide"
+      });
+    } else {
+      resourcesMedia.classList.add("flex");
+    }
+
     if (resourceSlides.length) {
       for (let z = 0; z < resourceSlides.length; z++) {
         let media = resourceSlides[z].querySelectorAll(".media__wrapper")[0];
+
         resourceSlides[z].addEventListener("click", function(evt) {
           evt.preventDefault();
           if (media.classList.contains("link")) {
@@ -180,9 +185,9 @@ jQuery(function($) {
 
   // setup map on contact page
   let mapHolder = document.querySelectorAll(".map--pane")[0];
-  let map;
-  let sweetwater = new google.maps.LatLng(32.472654, -100.406005);
   function initMap() {
+    let map;
+    let sweetwater = new google.maps.LatLng(32.472654, -100.406005);
     map = new google.maps.Map(mapHolder, {
       center: sweetwater,
       zoom: 17
