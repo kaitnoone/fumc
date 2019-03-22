@@ -25,28 +25,30 @@ get_header();
             ?>
 <!-- SERVICE TIMES -->
 <div class="service-times">
-    <div class="service-times__title"><?php the_title();?></div>
-    <div class="service-times__wrapper">
-        <div class="service-time">
-            <div class="time">
-                <span class="time-detail"><?php the_field('traditional_worship');?></span>
-                <!-- <span class="ampm">AM</span> -->
+    <div class="service-times__outer">
+        <div class="service-times__title"><?php the_title();?></div>
+        <div class="service-times__wrapper">
+            <div class="service-time">
+                <div class="time">
+                    <span class="time-detail"><?php the_field('traditional_worship');?></span>
+                    <!-- <span class="ampm">AM</span> -->
+                </div>
+                <div class="title">traditional worship</div>
             </div>
-            <div class="title">traditional worship</div>
-        </div>
-        <div class="service-time">
-            <div class="time">
-                <span class="time-detail"><?php the_field('sunday_school');?></span>
-                <!-- <span class="ampm">AM</span> -->
+            <div class="service-time">
+                <div class="time">
+                    <span class="time-detail"><?php the_field('sunday_school');?></span>
+                    <!-- <span class="ampm">AM</span> -->
+                </div>
+                <div class="title">Sunday School</div>
             </div>
-            <div class="title">Sunday School</div>
-        </div>
-        <div class="service-time">
-            <div class="time">
-                <span class="time-detail"><?php the_field('modern_worship');?></span>
-                <!-- <span class="ampm">AM</span> -->
+            <div class="service-time">
+                <div class="time">
+                    <span class="time-detail"><?php the_field('modern_worship');?></span>
+                    <!-- <span class="ampm">AM</span> -->
+                </div>
+                <div class="title">Modern Worship</div>
             </div>
-            <div class="title">Modern Worship</div>
         </div>
     </div>
 </div>
