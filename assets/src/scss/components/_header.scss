@@ -254,8 +254,10 @@ nav.primary {
 }
 
 @media (min-width: 800px) {
-  .main .container {
-    align-items: flex-start;
+  .header {
+    .main .container {
+      align-items: flex-start;
+    }
   }
 
   .nav--toggle {
@@ -263,7 +265,7 @@ nav.primary {
   }
 
   nav.primary {
-    padding-top: 20px;
+    padding-top: 15px;
     padding-left: 20px;
 
     .primary-nav,
@@ -297,7 +299,7 @@ nav.primary {
     }
 
     .logo {
-      max-width: 440px;
+      max-width: 360px;
     }
   }
 }

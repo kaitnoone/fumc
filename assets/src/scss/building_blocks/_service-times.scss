@@ -4,10 +4,16 @@
   color: $color-white;
   background-image: $gradient-linear;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
 
-  .service-times__title {
+  &__outer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__title {
     @include heading-style-wide;
     margin-bottom: 1em;
     font-size: 1.8em;
@@ -69,7 +75,7 @@
   }
 
   @media (min-width: 700px) {
-    .service-times__wrapper {
+    &__wrapper {
       display: flex;
       justify-content: space-between;
       width: 100%;
@@ -90,16 +96,25 @@
   }
 
   @include breakpoint(desktop) {
-    display: flex;
-    align-items: center;
+    &__outer {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
 
-    .service-times__title {
+    &__title {
       flex: 0 1 30%;
       text-align: left;
     }
-    .service-times__wrapper {
+    &__wrapper {
       flex-grow: 2;
       width: 80%;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    &__outer {
+      flex: 0 0 1400px;
     }
   }
 }

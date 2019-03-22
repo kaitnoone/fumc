@@ -15,6 +15,8 @@
         <script type="text/javascript"
             src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/flickity.pkgd.min.js"></script>
 
+        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/scripts.js">
+        </script>
         <script>
         Userback = window.Userback || {};
         Userback.access_token = '5557|8852|JbP1zuQqHzH3Df6Wsvhubtgy6OSruCIv6xjkoKsi7pF4AXWYyi';

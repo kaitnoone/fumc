@@ -40,15 +40,26 @@
     color: $color-brand-highlight;
     font-size: 2em;
   }
+
   &--content {
     margin: 1.5em 0;
     color: $color-text-light;
     line-height: 1.5;
 
+    &-wrap {
+      text-align: center;
+    }
+
     p {
       color: $color-text-light;
       line-height: 1.5;
       text-align: justify;
+    }
+  }
+
+  &--withimage {
+    .cta_block--content-wrap {
+      text-align: left;
     }
   }
 
@@ -83,6 +94,20 @@
   }
 
   @include breakpoint(tablet-port) {
+    &--image {
+      margin-right: 2em;
+    }
+
+    &--content {
+      p {
+        text-align: left;
+      }
+      &-wrap {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+
     &--withimage {
       display: flex;
       align-items: flex-start;
@@ -96,16 +121,6 @@
       .cta_block--content-wrap {
         flex: 1;
         padding-left: 20px;
-      }
-    }
-
-    &--image {
-      margin-right: 2em;
-    }
-
-    &--content {
-      p {
-        text-align: left;
       }
     }
   }

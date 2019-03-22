@@ -11,10 +11,8 @@
         <link rel="stylesheet" href="https://use.typekit.net/cle6jcf.css">
         <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/jquery.fancybox.min.css" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/flickity.min.css">
-        <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery.fancybox.js"></script>
         <script type="text/javascript"
             src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/flickity.pkgd.min.js"></script>
-
         <script>
         Userback = window.Userback || {};
         Userback.access_token = '5557|8852|JbP1zuQqHzH3Df6Wsvhubtgy6OSruCIv6xjkoKsi7pF4AXWYyi';

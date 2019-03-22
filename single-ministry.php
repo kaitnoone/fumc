@@ -75,36 +75,39 @@ endif;
 
 endif;?>
 
-<!-- PRE-FOOTER CTAS -->
-<?php
+<div class="cta-content">
+    <div class="inner--wide">
+        <!-- PRE-FOOTER CTAS -->
+        <?php
 $fctas = get_field('prefooter_ctas');
 if ($fctas): ?>
-<div class="cta--wrapper">
-    <?php foreach ($fctas as $post): ?>
-    <?php $fimage = get_field('cta_block-image');?>
-    <?php $texture = get_field('cta_block-textured_background');?>
-    <div
-        class="cta_block<?php if ($fimage) {?> cta_block--withimage<?php }?><?php if ($texture) {?> cta_block--textured<?php }?>">
-        <?php if ($fimage) {?>
-        <div class="cta_block--image">
-            <img src="<?php the_field('cta_block-image');?>" alt="<?php the_title();?>" />
-        </div>
-        <?php }?>
-        <div class="cta_block--content-wrap">
-            <div class="cta_block--title"><?php the_title();?></div>
-            <div class="cta_block--content">
-                <?php the_field('cta_block-content');?>
+        <div class="cta--wrapper">
+            <?php foreach ($fctas as $post): ?>
+            <?php $fimage = get_field('cta_block-image');?>
+            <?php $texture = get_field('cta_block-textured_background');?>
+            <div
+                class="cta_block<?php if ($fimage) {?> cta_block--withimage<?php }?><?php if ($texture) {?> cta_block--textured<?php }?>">
+                <?php if ($fimage) {?>
+                <div class="cta_block--image">
+                    <img src="<?php the_field('cta_block-image');?>" alt="<?php the_title();?>" />
+                </div>
+                <?php }?>
+                <div class="cta_block--content-wrap">
+                    <div class="cta_block--title"><?php the_title();?></div>
+                    <div class="cta_block--content">
+                        <?php the_field('cta_block-content');?>
+                    </div>
+                    <div class="cta_block--link">
+                        <a class="button--solid <?php the_field('cta_block-link_icon');?>"
+                            href="<?php the_field('cta_block-link');?>"><?php the_field('cta_block-link_text');?></a>
+                    </div>
+                </div>
             </div>
-            <div class="cta_block--link">
-                <a class="button--solid <?php the_field('cta_block-link_icon');?>"
-                    href="<?php the_field('cta_block-link');?>"><?php the_field('cta_block-link_text');?></a>
-            </div>
+            <?php endforeach;?>
         </div>
-    </div>
-    <?php endforeach;?>
-</div>
-<?php endif;
+        <?php endif;
 
 ?>
-
+    </div>
+</div>
 <?php get_footer();

@@ -1,4 +1,5 @@
-.main-content {
+.main-content,
+.cta-content {
   background: rgba($color-grey-90, 0.1);
   padding: 4em 1em;
   display: flex;
@@ -35,6 +36,25 @@
 
     .inner--wide {
       flex: 0 0 90%;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .inner,
+    .inner--wide {
+      flex: 0 0 1400px;
+    }
+  }
+}
+
+.cta-content {
+  background: transparent;
+  padding: 4em 0;
+
+  @include breakpoint(tablet-land) {
+    .inner--wide {
+      flex: 0 0 100%;
+      padding: 0 25px;
     }
   }
 }

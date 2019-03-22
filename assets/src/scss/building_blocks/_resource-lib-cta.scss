@@ -4,35 +4,50 @@
   color: $color-white;
   background-image: url("../img/texture2.png"), $gradient-linear;
 
-  .resource_library_cta--title {
+  &--title {
     @include heading-style();
     font-size: 2em;
     margin-bottom: 5px;
   }
 
-  .resource_library_cta--text a {
+  &--text a {
     color: $color-brand-secondary-bright;
     font-style: italic;
   }
 
-  .resource_library_cta--button {
+  &--button {
     padding-top: 1em;
-  }
 
-  .resource_library_cta--button a {
-    text-align: center;
-    @include button-outline($color-blue-dark);
-    color: $color-white;
+    a {
+      text-align: center;
+      @include button-outline($color-blue-dark);
+      color: $color-white;
+
+      &:hover {
+        background: rgba($color-blue-dark, 0.7);
+      }
+    }
   }
 
   @include breakpoint(tablet-port) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    &--wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
 
-    .resource_library_cta--button {
+    &--button {
       padding-top: 0;
       padding-left: 1em;
+    }
+  }
+  @media (min-width: 1400px) {
+    display: flex;
+    justify-content: center;
+
+    &--wrapper {
+      max-width: 1400px;
     }
   }
 }
